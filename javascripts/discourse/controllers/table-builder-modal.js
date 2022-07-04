@@ -9,6 +9,13 @@ export default class extends Controller {
     { column: 2, rows: A([{ id: 1 }]) },
   ]);
 
+  resetData() {
+    this.tableItems = A([
+      { column: 1, rows: A([{ id: 1 }]) },
+      { column: 2, rows: A([{ id: 1 }]) },
+    ]);
+  }
+
   @action
   cancelTableCreation() {
     this.send("closeModal");
@@ -80,6 +87,7 @@ export default class extends Controller {
   @action
   createTable() {
     this.buildTable(this.tableItems);
+    this.resetData();
     this.send("closeModal");
   }
 
