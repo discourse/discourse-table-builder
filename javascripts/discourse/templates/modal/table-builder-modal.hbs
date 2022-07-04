@@ -1,0 +1,40 @@
+<DModalBody
+  @title={{theme-prefix "discourse_table_builder.modal.title"}}
+  @class="table-builder-modal"
+>
+  <form id="insert-markdown-table-form" {{action "createTable" on="submit"}}>
+    <section class="header-section">
+      <div class="table-header-fields">
+        {{#each this.tableItems as |item|}}
+          <HeaderColumn
+            @column={{item}}
+            @columnId={{item.column}}
+            @tableItems={{this.tableItems}}
+            @addColumn={{this.addColumn}}
+            @removeColumn={{this.removeColumn}}
+            @setColumnHeader={{this.setColumnHeader}}
+            @addRow={{this.addRow}}
+            @removeRow={{this.removeRow}}
+            @setRowValue={{this.setRowValue}}
+            @alignColumn={{this.alignColumn}}
+          />
+        {{/each}}
+      </div>
+    </section>
+  </form>
+</DModalBody>
+
+<div class="modal-footer">
+  <DButton
+    @class="btn-primary"
+    @label={{theme-prefix "discourse_table_builder.modal.create"}}
+    @icon="plus"
+    @action={{action "createTable"}}
+  />
+
+  <DButton
+    @class="btn-flat"
+    @label={{theme-prefix "discourse_table_builder.modal.cancel"}}
+    @action={{action "cancelTableCreation"}}
+  />
+</div>

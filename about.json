@@ -9,5 +9,11 @@
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
   "assets": {},
-  "modifiers": {}
+  "modifiers": {
+    "svg_icons": [
+      "align-left",
+      "align-center",
+      "align-right"
+    ]
+  }
 }

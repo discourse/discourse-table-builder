@@ -1,0 +1,62 @@
+<div class="header-column">
+  <div class="header-row">
+    <Input
+      @value={{columnHeaderValue}}
+      @class="table-builder-input"
+      @id="header-column-{{@columnId}}"
+      @placeholderKey={{theme-prefix "discourse_table_builder.modal.header"}}
+      {{on "change" this.addColumnHeader}}
+    />
+    <div class="body-inputs">
+      {{#each @column.rows as |item|}}
+        <BodyRow
+          @addRow={{this.addRow}}
+          @columnId={{@columnId}}
+          @allRows={{@column.rows}}
+          @row={{item}}
+          @removeRow={{this.removeRow}}
+          @setRowValue={{this.setRowValue}}
+        />
+      {{/each}}
+    </div>
+
+  </div>
+  <div class="column-action-buttons column-aligned-{{this.alignment}}">
+    <DButton
+      @icon="align-left"
+      @class="btn-align-left"
+      @title={{theme-prefix "discourse_table_builder.modal.buttons.align_left"}}
+      @action={{action "alignColumn" "left"}}
+    />
+    <DButton
+      @icon="align-center"
+      @class="btn-align-center"
+      @title={{theme-prefix
+        "discourse_table_builder.modal.buttons.align_center"
+      }}
+      @action={{action "alignColumn" "center"}}
+    />
+    <DButton
+      @icon="align-right"
+      @class="btn-align-right"
+      @title={{theme-prefix
+        "discourse_table_builder.modal.buttons.align_right"
+      }}
+      @action={{action "alignColumn" "right"}}
+    />
+    <DButton
+      @icon="trash-alt"
+      @class="btn-danger"
+      @action={{action "removeColumn"}}
+      @title={{theme-prefix
+        "discourse_table_builder.modal.buttons.remove_column"
+      }}
+      @disabled={{this.disableRemoveColumn}}
+    />
+    <DButton
+      @icon="plus"
+      @action={{action "addColumn"}}
+      @title={{theme-prefix "discourse_table_builder.modal.buttons.add_column"}}
+    />
+  </div>
+</div>

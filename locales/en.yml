@@ -1,3 +1,21 @@
 en:
+  discourse_table_builder:
+    title: "Table Builder"
+    composer:
+      button: "Insert Title"
+    modal:
+      title: "Table Builder"
+      create: "Build Table"
+      cancel: "cancel"
+      header: "Header"
+      body: "Body"
+      buttons:
+        add_column: "Add Column"
+        remove_column: "Remove Column"
+        add_row: "Add Row"
+        remove_row: "Remove Row"
+        align_left: "Align Left"
+        align_center: "Align Center"
+        align_right: "Align Right"
   theme_metadata:
     description: "Adds a button to the composer to easily build tables in markdown"
