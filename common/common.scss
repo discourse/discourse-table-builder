@@ -9,6 +9,10 @@
   gap: 0.5rem;
   margin-bottom: 2rem;
 
+  .table-builder-input {
+    font-weight: bold;
+  }
+
   .header-column {
     border: 1px solid var(--primary-low-mid);
     padding: 1rem;
@@ -53,6 +57,10 @@
   .body-inputs {
     display: flex;
     flex-direction: column;
+
+    .table-builder-input {
+      font-weight: normal;
+    }
   }
 
   .body-row {
