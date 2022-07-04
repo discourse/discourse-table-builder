@@ -2,7 +2,7 @@ en:
   discourse_table_builder:
     title: "Table Builder"
     composer:
-      button: "Insert Title"
+      button: "Insert Table"
     modal:
       title: "Table Builder"
       create: "Build Table"
