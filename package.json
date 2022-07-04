@@ -1,0 +1,10 @@
+{
+  "name": "discourse-table-builder",
+  "version": "0.0.1",
+  "repository": "https://github.com/keegangeorge/discourse-table-builder",
+  "author": "Keegan George",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "eslint-config-discourse": "latest"
+  }
+}
