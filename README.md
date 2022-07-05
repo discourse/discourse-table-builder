@@ -8,4 +8,4 @@ A theme component that adds a button to the composer tools to easily build table
 
 - [X] Add table builder functionality
 - [ ] Possibly add the ability to edit tables
-- [ ] Add front-end tests 
+- [X] Add front-end tests
