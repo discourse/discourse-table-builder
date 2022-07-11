@@ -1,0 +1,23 @@
+<DModalBody
+  @title={{theme-prefix "discourse_table_builder.edit.modal.title"}}
+  @class="table-editor-modal"
+>
+  {{! TODO: Parse .md to json and fill table }}
+  {{model.table}}
+
+</DModalBody>
+
+<div class="modal-footer">
+  <DButton
+    @class="btn-primary btn-edit-table"
+    @label={{theme-prefix "discourse_table_builder.edit.modal.create"}}
+    @icon="plus"
+    @action={{action "editTable"}}
+  />
+
+  <DButton
+    @class="btn-flat"
+    @label={{theme-prefix "discourse_table_builder.edit.modal.cancel"}}
+    @action={{action "cancelTableEdit"}}
+  />
+</div>
