@@ -3,7 +3,10 @@
   @class="table-editor-modal"
 >
   {{! TODO: Parse .md to json and fill table }}
-  {{model.table}}
+  {{! TODO: Fix instances where multiple tables in a single post }}
+
+  {{! TODO better id name }}
+  <div class="table-spreadsheet-container" id="table-editor-spreadsheet"></div>
 
 </DModalBody>
 
@@ -11,7 +14,7 @@
   <DButton
     @class="btn-primary btn-edit-table"
     @label={{theme-prefix "discourse_table_builder.edit.modal.create"}}
-    @icon="plus"
+    @icon="pencil-alt"
     @action={{action "editTable"}}
   />
 
