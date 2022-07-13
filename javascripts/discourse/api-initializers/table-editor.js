@@ -30,7 +30,7 @@ export default apiInitializer("0.11.1", (api) => {
   }
 
   function generateModal(event) {
-    const table = event.target.nextElementSibling;
+    const table = event.target.parentNode.lastElementChild;
     const tempTable = table.cloneNode(true);
     const postId = this.id;
 
@@ -60,7 +60,13 @@ export default apiInitializer("0.11.1", (api) => {
 
       const popupBtn = createButton();
       table.parentNode.classList.add("fullscreen-table-wrapper");
-      table.parentNode.insertBefore(popupBtn, table);
+      const expandBtn = document.querySelector(".open-popup-link");
+
+      if (table.parentNode.contains(expandBtn)) {
+        expandBtn.parentNode.insertBefore(popupBtn, expandBtn);
+      } else {
+        table.parentNode.insertBefore(popupBtn, table);
+      }
       popupBtn.addEventListener("click", generateModal.bind(attrs), false);
     });
   }
