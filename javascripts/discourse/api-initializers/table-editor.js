@@ -32,27 +32,13 @@ export default apiInitializer("0.11.1", (api) => {
   function generateModal(event) {
     const table = event.target.parentNode.lastElementChild;
     const tempTable = table.cloneNode(true);
-    const postId = this.id;
 
-    return ajax(`/posts/${postId}`, {
-      type: "GET",
-      cache: false,
-    })
-      .then((result) => {
-        const attrs = {
-          widget: this,
-          raw: result.raw,
-        };
-
-        showModal("table-editor-modal", {
-          model: attrs,
-        }).setProperties({
-          tableHtml: tempTable,
-          submitOnEnter: false,
-        });
-        return result.raw;
-      })
-      .catch(popupAjaxError);
+    showModal("table-editor-modal", {
+      model: this,
+    }).setProperties({
+      tableHtml: tempTable,
+      submitOnEnter: false,
+    });
   }
 
   function generatePopups(tables, attrs) {
