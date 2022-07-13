@@ -23,6 +23,7 @@ export default class extends Controller {
         headings.push(...Object.keys(object));
       }
 
+      // Build Table Data
       tableData.push([...Object.values(object)]);
     });
 
