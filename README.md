@@ -14,7 +14,6 @@ A theme component that adds a button to the composer tools to easily build table
 
 Known Issues:
 
-- Clicking expand table button showing empty modal
 - After viewing an edit table modal once, a reload is required for it to work again or with another table, otherwise the following error appears:
   
 ```js
