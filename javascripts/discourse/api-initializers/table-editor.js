@@ -46,7 +46,10 @@ export default apiInitializer("0.11.1", (api) => {
 
         showModal("table-editor-modal", {
           model: attrs,
-        }).set("tableHtml", tempTable);
+        }).setProperties({
+          tableHtml: tempTable,
+          submitOnEnter: false,
+        });
         return result.raw;
       })
       .catch(popupAjaxError);

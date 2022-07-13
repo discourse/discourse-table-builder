@@ -81,3 +81,8 @@
   display: inline;
   margin-inline: 0.25em;
 }
+
+@import "vendor/jspreadsheet";
+@import "vendor/jspreadsheet-datatables";
+@import "vendor/jspreadsheet-theme";
+@import "vendor/jsuites";

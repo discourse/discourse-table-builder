@@ -8,7 +8,7 @@ export default class extends Controller {
     // ? TODO move to component (read about not allowing Controllers to do DOM manipulation)
     this._super(...arguments);
 
-    loadScript(settings.theme_uploads.importabular).then(() => {
+    loadScript(settings.theme_uploads.jspreadsheet).then(() => {
       this.buildTable(this.tableHtml);
     });
   }
@@ -29,17 +29,18 @@ export default class extends Controller {
 
     const columns = headings.map((heading) => {
       return {
-        label: heading,
+        title: heading,
+        width: "100", // TODO make based on string length?
       };
     });
 
-    // eslint-disable-next-line no-unused-vars, no-undef
-    const sheet = new Importabular({
-      node: document.getElementById("table-editor-spreadsheet"),
-      columns,
+    this.spreadsheet = jspreadsheet(document.getElementById("spreadsheet"), {
       data: tableData,
-      width: "100vw",
+      columns,
     });
+
+    const originalData = this.spreadsheet.getData();
+    console.log("Original Data:", originalData);
   }
 
   @action
@@ -50,6 +51,7 @@ export default class extends Controller {
   @action
   editTable() {
     // TODO: insert table edit submission logic
+    console.log("New Data:", this.spreadsheet.getData());
     this.send("closeModal");
   }
 }

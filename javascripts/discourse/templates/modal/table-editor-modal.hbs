@@ -6,13 +6,14 @@
   {{! TODO: Fix instances where multiple tables in a single post }}
 
   {{! TODO better id name }}
-  <div class="table-spreadsheet-container" id="table-editor-spreadsheet"></div>
+  <div id="spreadsheet" tabindex="1" class="jexcel_container"></div>
 
 </DModalBody>
 
 <div class="modal-footer">
+  {{! TODO Fix submitOnEnter property always true before adding back "btn-primary" class to edit button}}
   <DButton
-    @class="btn-primary btn-edit-table"
+    @class="btn btn-edit-table"
     @label={{theme-prefix "discourse_table_builder.edit.modal.create"}}
     @icon="pencil-alt"
     @action={{action "editTable"}}

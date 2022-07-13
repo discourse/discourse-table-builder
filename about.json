@@ -9,7 +9,7 @@
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
   "assets": {
-    "importabular": "assets/importabular.js"
+    "jspreadsheet": "assets/jspreadsheet.js"
   },
   "modifiers": {
     "svg_icons": [
