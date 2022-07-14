@@ -13,8 +13,14 @@ export default Component.extend({
     // ? TODO move to component (read about not allowing Controllers to do DOM manipulation)
     this._super(...arguments);
 
-    loadScript(settings.theme_uploads.jspreadsheet).then(() => {
+    this.loadLibraries().then(() => {
       this.buildTable(this.tableHtml);
+    });
+  },
+
+  loadLibraries() {
+    return loadScript(settings.theme_uploads.jsuites).then(() => {
+      return loadScript(settings.theme_uploads.jspreadsheet);
     });
   },
 
@@ -41,6 +47,7 @@ export default Component.extend({
 
     const spreadsheetContainer = document.querySelector("#spreadsheet");
 
+    // eslint-disable-next-line no-undef
     this.spreadsheet = jspreadsheet(spreadsheetContainer, {
       data: tableData,
       columns,
