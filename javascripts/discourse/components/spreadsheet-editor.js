@@ -10,9 +10,6 @@ export default Component.extend({
   didInsertElement() {
     this._super(...arguments);
 
-    // ? TODO move to component (read about not allowing Controllers to do DOM manipulation)
-    this._super(...arguments);
-
     this.loadLibraries().then(() => {
       this.buildTable(this.tableHtml);
     });
