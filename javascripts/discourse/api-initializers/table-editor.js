@@ -4,8 +4,6 @@ import { schedule } from "@ember/runloop";
 import I18n from "I18n";
 import { iconNode } from "discourse-common/lib/icon-library";
 import { create } from "virtual-dom";
-import { ajax } from "discourse/lib/ajax";
-import { popupAjaxError } from "discourse/lib/ajax-error";
 
 export default apiInitializer("0.11.1", (api) => {
   const site = api.container.lookup("site:main");
