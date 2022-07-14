@@ -1,0 +1,24 @@
+.open-popup-link {
+  display: inline;
+  margin-inline: 0.25em;
+}
+
+.btn-edit-table {
+  background: var(--tertiary);
+  color: var(--secondary);
+
+  .d-icon {
+    color: var(--secondary);
+  }
+
+  .discourse-no-touch & {
+    &:hover {
+      background-color: var(--tertiary-hover);
+      color: var(--secondary);
+
+      .d-icon {
+        color: var(--secondary);
+      }
+    }
+  }
+}
