@@ -82,6 +82,26 @@
   margin-inline: 0.25em;
 }
 
+.btn-edit-table {
+  background: var(--tertiary);
+  color: var(--secondary);
+
+  .d-icon {
+    color: var(--secondary);
+  }
+
+  .discourse-no-touch & {
+    &:hover {
+      background-color: var(--tertiary-hover);
+      color: var(--secondary);
+
+      .d-icon {
+        color: var(--secondary);
+      }
+    }
+  }
+}
+
 @import "vendor/jspreadsheet";
 @import "vendor/jspreadsheet-datatables";
 @import "vendor/jspreadsheet-theme";
