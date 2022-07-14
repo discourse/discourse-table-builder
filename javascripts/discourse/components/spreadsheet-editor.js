@@ -38,7 +38,7 @@ export default Component.extend({
     const columns = headings.map((heading) => {
       return {
         title: heading,
-        width: "100", // TODO make based on string length?
+        width: heading.length * 15,
       };
     });
 
