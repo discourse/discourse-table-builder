@@ -1,7 +1,7 @@
 // import Controller from "@ember/controller";
 import { action } from "@ember/object";
 import loadScript from "discourse/lib/load-script";
-import { tableToObj } from "../lib/utilities";
+import { arrayToTable, tableToObj } from "../lib/utilities";
 import Component from "@ember/component";
 
 export default Component.extend({
@@ -25,6 +25,7 @@ export default Component.extend({
     const tableObject = tableToObj(table);
     const headings = [];
     const tableData = [];
+    console.log(this.model.id);
     tableObject.forEach((object) => {
       // Build Headings
       if (!headings.includes(...Object.keys(object))) {
@@ -62,7 +63,22 @@ export default Component.extend({
   @action
   editTable() {
     // TODO: insert table edit submission logic
-    console.log("New Data:", this.spreadsheet.getData());
+    const updatedHeaders = this.spreadsheet.getHeaders().split(","); // keys
+    const updatedData = this.spreadsheet.getData(); // values
+
+    const markdownTable = this.buildTableMarkdown(updatedHeaders, updatedData);
     this.triggerModalClose();
+  },
+
+  buildTableMarkdown(headers, data) {
+    const table = [];
+    data.forEach((row) => {
+      const result = {};
+
+      headers.forEach((key, index) => (result[key] = row[index]));
+      table.push(result);
+    });
+
+    return arrayToTable(table);
   },
 });
