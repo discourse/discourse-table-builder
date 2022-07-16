@@ -3,9 +3,12 @@ import { action } from "@ember/object";
 import loadScript from "discourse/lib/load-script";
 import { arrayToTable, tableToObj } from "../lib/utilities";
 import Component from "@ember/component";
+import { ajax } from "discourse/lib/ajax";
+import { popupAjaxError } from "discourse/lib/ajax-error";
 
 export default Component.extend({
   tagName: "",
+  showEditReason: false,
 
   didInsertElement() {
     this._super(...arguments);
@@ -25,7 +28,7 @@ export default Component.extend({
     const tableObject = tableToObj(table);
     const headings = [];
     const tableData = [];
-    console.log(this.model.id);
+
     tableObject.forEach((object) => {
       // Build Headings
       if (!headings.includes(...Object.keys(object))) {
@@ -56,6 +59,15 @@ export default Component.extend({
   },
 
   @action
+  showEditReasonField() {
+    if (this.showEditReason) {
+      return this.set("showEditReason", false);
+    } else {
+      return this.set("showEditReason", true);
+    }
+  },
+
+  @action
   cancelTableEdit() {
     this.triggerModalClose();
   },
@@ -67,7 +79,28 @@ export default Component.extend({
     const updatedData = this.spreadsheet.getData(); // values
 
     const markdownTable = this.buildTableMarkdown(updatedHeaders, updatedData);
-    this.triggerModalClose();
+    const postId = this.model.id;
+    const newRaw = markdownTable;
+    const editReason =
+      this.get("editReason") || "Update Table with Table Editor";
+
+    this.updateTable(postId, newRaw, editReason);
+  },
+
+  updateTable(postId, raw, edit_reason) {
+    return ajax(`/posts/${postId}.json`, {
+      type: "PUT",
+      data: {
+        post: {
+          raw,
+          edit_reason,
+        },
+      },
+    })
+      .catch(popupAjaxError)
+      .finally(() => {
+        this.triggerModalClose();
+      });
   },
 
   buildTableMarkdown(headers, data) {

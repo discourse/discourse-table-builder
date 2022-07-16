@@ -2,9 +2,26 @@
   @title={{theme-prefix "discourse_table_builder.edit.modal.title"}}
   @class="table-editor-modal"
 >
-  {{! TODO: Parse .md to json and fill table }}
-  <div id="spreadsheet" tabindex="1" class="jexcel_container"></div>
 
+  <div class="edit-reason">
+    <DButton
+      @icon="info-circle"
+      @title={{theme-prefix
+        "discourse_table_builder.edit.modal.trigger_reason"
+      }}
+      @action={{action "showEditReasonField"}}
+      @class="btn btn-icon btn-flat no-text btn-edit-reason"
+    />
+    {{#if showEditReason}}
+      <TextField
+        @value={{this.editReason}}
+        @placeholderKey={{theme-prefix
+          "discourse_table_builder.edit.modal.reason"
+        }}
+      />
+    {{/if}}
+  </div>
+  <div id="spreadsheet" tabindex="1" class="jexcel_container"></div>
 </DModalBody>
 
 <div class="modal-footer">

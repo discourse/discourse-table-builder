@@ -4,7 +4,8 @@ import { schedule } from "@ember/runloop";
 import I18n from "I18n";
 import { iconNode } from "discourse-common/lib/icon-library";
 import { create } from "virtual-dom";
-
+import { ajax } from "discourse/lib/ajax";
+import { popupAjaxError } from "discourse/lib/ajax-error";
 export default apiInitializer("0.11.1", (api) => {
   const site = api.container.lookup("site:main");
   const currentUser = api.getCurrentUser();
@@ -31,12 +32,16 @@ export default apiInitializer("0.11.1", (api) => {
     const table = event.target.parentNode.lastElementChild;
     const tempTable = table.cloneNode(true);
 
-    showModal("table-editor-modal", {
-      model: this,
-    }).setProperties({
-      tableHtml: tempTable,
-      submitOnEnter: false,
-    });
+    return ajax(`/posts/${this.id}`, { type: "GET" })
+      .then((post) => {
+        showModal("table-editor-modal", {
+          model: post,
+        }).setProperties({
+          tableHtml: tempTable,
+          submitOnEnter: false,
+        });
+      })
+      .catch(popupAjaxError);
   }
 
   function generatePopups(tables, attrs) {

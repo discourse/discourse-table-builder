@@ -23,5 +23,7 @@ en:
         title: "Edit Table"
         cancel: "cancel"
         create: "Update Table"
+        reason: "why are you editing?"
+        trigger_reason: "Add reason for edit"
   theme_metadata:
     description: "Adds a button to the composer to easily build tables in markdown"

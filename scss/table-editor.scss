@@ -22,3 +22,16 @@
     }
   }
 }
+
+.table-editor-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .btn-edit-reason {
+    background: none;
+    .d-icon {
+      color: var(--primary-high);
+    }
+  }
+}
