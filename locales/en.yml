@@ -17,5 +17,14 @@ en:
         align_left: "Align Left"
         align_center: "Align Center"
         align_right: "Align Right"
+    edit:
+      btn_edit: "Edit Table"
+      modal:
+        title: "Edit Table"
+        cancel: "cancel"
+        create: "Update Table"
+        reason: "why are you editing?"
+        trigger_reason: "Add reason for edit"
+      default_edit_reason: "Update Table with Table Editor"
   theme_metadata:
     description: "Adds a button to the composer to easily build tables in markdown"

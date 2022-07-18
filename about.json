@@ -8,7 +8,10 @@
   "theme_version": "0.0.1",
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
-  "assets": {},
+  "assets": {
+    "jsuites": "assets/jsuites.js",
+    "jspreadsheet": "assets/jspreadsheet.js"
+  },
   "modifiers": {
     "svg_icons": [
       "align-left",
