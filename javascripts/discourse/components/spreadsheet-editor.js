@@ -1,11 +1,11 @@
 // import Controller from "@ember/controller";
 import { action } from "@ember/object";
 import loadScript from "discourse/lib/load-script";
-import { arrayToTable, tableToObj } from "../lib/utilities";
+import { arrayToTable, findTableRegex, tableToObj } from "../lib/utilities";
 import Component from "@ember/component";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
-import { findTableRegex } from "../lib/utilities";
+import I18n from "I18n";
 
 export default Component.extend({
   tagName: "",
@@ -76,15 +76,20 @@ export default Component.extend({
     const updatedData = this.spreadsheet.getData(); // values
 
     const markdownTable = this.buildTableMarkdown(updatedHeaders, updatedData);
+    const tableId = this.get("tableId");
     const postId = this.model.id;
     const newRaw = markdownTable;
     const editReason =
-      this.get("editReason") || "Update Table with Table Editor";
-    const tableId = this.get("tableId");
-
+      this.get("editReason") ||
+      I18n.t(themePrefix("discourse_table_builder.edit.default_edit_reason"));
     const raw = this.model.raw;
-    const tableToEdit = raw.match(findTableRegex());
+    const newPostRaw = this.buildUpdatedPost(tableId, raw, newRaw);
 
+    this.updateTable(postId, newPostRaw, editReason);
+  },
+
+  buildUpdatedPost(tableId, raw, newRaw) {
+    const tableToEdit = raw.match(findTableRegex());
     let editedTable;
 
     if (tableToEdit.length > 1) {
@@ -93,7 +98,7 @@ export default Component.extend({
       editedTable = raw.replace(findTableRegex(), newRaw);
     }
 
-    this.updateTable(postId, editedTable, editReason);
+    return editedTable;
   },
 
   updateTable(postId, raw, edit_reason) {

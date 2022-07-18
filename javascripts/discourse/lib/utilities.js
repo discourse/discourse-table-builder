@@ -86,6 +86,10 @@ export function arrayToTable(array, columns, alignment = "center") {
   return table;
 }
 
+/**
+ *
+ * @returns a regular experssion finding all markdown tables
+ */
 export function findTableRegex() {
   return /((\r?){2}|^)([^\r\n]*\|[^\r\n]*(\r?\n)?)+(?=(\r?\n){2}|$)/gm;
 }
