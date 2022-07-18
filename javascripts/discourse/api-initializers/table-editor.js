@@ -31,6 +31,7 @@ export default apiInitializer("0.11.1", (api) => {
   function generateModal(event) {
     const table = event.target.parentNode.lastElementChild;
     const tempTable = table.cloneNode(true);
+    const tableId = event.target.getAttribute("data-table-id");
 
     return ajax(`/posts/${this.id}`, { type: "GET" })
       .then((post) => {
@@ -38,19 +39,20 @@ export default apiInitializer("0.11.1", (api) => {
           model: post,
         }).setProperties({
           tableHtml: tempTable,
-          submitOnEnter: false,
+          tableId,
         });
       })
       .catch(popupAjaxError);
   }
 
   function generatePopups(tables, attrs) {
-    tables.forEach((table) => {
+    tables.forEach((table, index) => {
       if (site.isMobileDevice) {
         return;
       }
 
       const popupBtn = createButton();
+      popupBtn.setAttribute("data-table-id", index);
       table.parentNode.classList.add("fullscreen-table-wrapper");
       const expandBtn = document.querySelector(".open-popup-link");
 
@@ -59,6 +61,7 @@ export default apiInitializer("0.11.1", (api) => {
       } else {
         table.parentNode.insertBefore(popupBtn, table);
       }
+
       popupBtn.addEventListener("click", generateModal.bind(attrs), false);
     });
   }

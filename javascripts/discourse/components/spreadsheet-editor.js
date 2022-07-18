@@ -5,6 +5,7 @@ import { arrayToTable, tableToObj } from "../lib/utilities";
 import Component from "@ember/component";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
+import { findTableRegex } from "../lib/utilities";
 
 export default Component.extend({
   tagName: "",
@@ -53,9 +54,6 @@ export default Component.extend({
       data: tableData,
       columns,
     });
-
-    const originalData = this.spreadsheet.getData();
-    console.log("Original Data:", originalData);
   },
 
   @action
@@ -74,7 +72,6 @@ export default Component.extend({
 
   @action
   editTable() {
-    // TODO: insert table edit submission logic
     const updatedHeaders = this.spreadsheet.getHeaders().split(","); // keys
     const updatedData = this.spreadsheet.getData(); // values
 
@@ -83,8 +80,20 @@ export default Component.extend({
     const newRaw = markdownTable;
     const editReason =
       this.get("editReason") || "Update Table with Table Editor";
+    const tableId = this.get("tableId");
 
-    this.updateTable(postId, newRaw, editReason);
+    const raw = this.model.raw;
+    const tableToEdit = raw.match(findTableRegex());
+
+    let editedTable;
+
+    if (tableToEdit.length > 1) {
+      editedTable = raw.replace(tableToEdit[tableId], newRaw);
+    } else {
+      editedTable = raw.replace(findTableRegex(), newRaw);
+    }
+
+    this.updateTable(postId, editedTable, editReason);
   },
 
   updateTable(postId, raw, edit_reason) {
