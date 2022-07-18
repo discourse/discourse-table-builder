@@ -602,7 +602,7 @@ div[data-before]:before {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-
+  flex-flow: row wrap;
   -webkit-flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
@@ -1145,9 +1145,6 @@ div[data-before]:before {
   box-sizing: border-box;
 }
 
-.jdropdown-content:empty {
-}
-
 .jdropdown-item {
   white-space: nowrap;
   text-align: left;
@@ -1471,9 +1468,6 @@ div[data-before]:before {
 
 /** List render **/
 
-.jdropdown-list {
-}
-
 .jdropdown-list .jdropdown-container {
   display: block;
 }
@@ -1726,6 +1720,7 @@ div[data-before]:before {
   left: 50%;
   width: 60%;
   height: 60%;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
   border: 1px solid #ccc;
