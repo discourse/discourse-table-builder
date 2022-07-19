@@ -1,4 +1,3 @@
-// import Controller from "@ember/controller";
 import { action } from "@ember/object";
 import loadScript from "discourse/lib/load-script";
 import { arrayToTable, findTableRegex, tableToObj } from "../lib/utilities";
@@ -6,26 +5,115 @@ import Component from "@ember/component";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
 import I18n from "I18n";
+import { schedule } from "@ember/runloop";
 
 export default Component.extend({
   tagName: "",
   showEditReason: false,
+  spreadsheet: null,
 
+  // Lifecycle Methods:
   didInsertElement() {
     this._super(...arguments);
 
-    this.loadLibraries().then(() => {
-      this.buildTable(this.tableHtml);
+    schedule("afterRender", () => {
+      this.loadLibraries().then(() => {
+        if (this.isEditingTable) {
+          this.buildPopulatedTable(this.tableHtml);
+        } else {
+          this.buildNewTable();
+        }
+      });
     });
   },
 
+  willDestroyElement() {
+    this._super(...arguments);
+    this.spreadsheet?.destroy();
+  },
+
+  // Getters:
+  get isEditingTable() {
+    if (this.tableHtml) {
+      return true;
+    }
+
+    return false;
+  },
+
+  get modalAttributes() {
+    if (this.isEditingTable) {
+      return {
+        title: themePrefix("discourse_table_builder.edit.modal.title"),
+        insertTable: {
+          title: themePrefix("discourse_table_builder.edit.modal.create"),
+          icon: "pencil-alt",
+        },
+      };
+    } else {
+      return {
+        title: themePrefix("discourse_table_builder.modal.title"),
+        insertTable: {
+          title: themePrefix("discourse_table_builder.modal.create"),
+          icon: "plus",
+        },
+      };
+    }
+  },
+
+  // Actions:
+  @action
+  showEditReasonField() {
+    if (this.showEditReason) {
+      return this.set("showEditReason", false);
+    } else {
+      return this.set("showEditReason", true);
+    }
+  },
+
+  @action
+  cancelTableInsertion() {
+    this.triggerModalClose();
+  },
+
+  @action
+  insertTable() {
+    const updatedHeaders = this.spreadsheet.getHeaders().split(","); // keys
+    const updatedData = this.spreadsheet.getData(); // values
+    const markdownTable = this.buildTableMarkdown(updatedHeaders, updatedData);
+
+    if (!this.isEditingTable) {
+      this.toolbarEvent.addText(markdownTable);
+      return this.triggerModalClose();
+    } else {
+      return this.updateTable(markdownTable);
+    }
+  },
+
+  // Helper Methods:
   loadLibraries() {
     return loadScript(settings.theme_uploads.jsuites).then(() => {
       return loadScript(settings.theme_uploads.jspreadsheet);
     });
   },
 
-  buildTable(table) {
+  buildNewTable() {
+    const data = [
+      ["", "", ""],
+      ["", "", ""],
+      ["", "", ""],
+    ];
+
+    const columns = [
+      { title: "Column 1", width: 150 },
+      { title: "Column 2", width: 150 },
+      { title: "Column 3", width: 150 },
+    ];
+
+    return this.buildSpreadsheet(data, columns);
+  },
+
+  buildPopulatedTable(table) {
     const tableObject = tableToObj(table);
     const headings = [];
     const tableData = [];
@@ -47,45 +135,18 @@ export default Component.extend({
       };
     });
 
+    return this.buildSpreadsheet(tableData, columns);
+  },
+
+  buildSpreadsheet(data, columns, opts = {}) {
     const spreadsheetContainer = document.querySelector("#spreadsheet");
 
     // eslint-disable-next-line no-undef
     this.spreadsheet = jspreadsheet(spreadsheetContainer, {
-      data: tableData,
+      data,
       columns,
+      ...opts,
     });
-  },
-
-  @action
-  showEditReasonField() {
-    if (this.showEditReason) {
-      return this.set("showEditReason", false);
-    } else {
-      return this.set("showEditReason", true);
-    }
-  },
-
-  @action
-  cancelTableEdit() {
-    this.triggerModalClose();
-  },
-
-  @action
-  editTable() {
-    const updatedHeaders = this.spreadsheet.getHeaders().split(","); // keys
-    const updatedData = this.spreadsheet.getData(); // values
-
-    const markdownTable = this.buildTableMarkdown(updatedHeaders, updatedData);
-    const tableId = this.get("tableId");
-    const postId = this.model.id;
-    const newRaw = markdownTable;
-    const editReason =
-      this.get("editReason") ||
-      I18n.t(themePrefix("discourse_table_builder.edit.default_edit_reason"));
-    const raw = this.model.raw;
-    const newPostRaw = this.buildUpdatedPost(tableId, raw, newRaw);
-
-    this.updateTable(postId, newPostRaw, editReason);
   },
 
   buildUpdatedPost(tableId, raw, newRaw) {
@@ -101,7 +162,20 @@ export default Component.extend({
     return editedTable;
   },
 
-  updateTable(postId, raw, edit_reason) {
+  updateTable(markdownTable) {
+    const tableId = this.get("tableId");
+    const postId = this.model.id;
+    const newRaw = markdownTable;
+    const editReason =
+      this.get("editReason") ||
+      I18n.t(themePrefix("discourse_table_builder.edit.default_edit_reason"));
+    const raw = this.model.raw;
+    const newPostRaw = this.buildUpdatedPost(tableId, raw, newRaw);
+
+    return this.sendTableUpdate(postId, newPostRaw, editReason);
+  },
+
+  sendTableUpdate(postId, raw, edit_reason) {
     return ajax(`/posts/${postId}.json`, {
       type: "PUT",
       data: {

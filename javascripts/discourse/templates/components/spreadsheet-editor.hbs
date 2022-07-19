@@ -1,38 +1,62 @@
-<DModalBody
-  @title={{theme-prefix "discourse_table_builder.edit.modal.title"}}
-  @class="table-editor-modal"
->
-  <div class="edit-reason">
-    <DButton
-      @icon="info-circle"
-      @title={{theme-prefix
-        "discourse_table_builder.edit.modal.trigger_reason"
-      }}
-      @action={{action "showEditReasonField"}}
-      @class="btn btn-icon btn-flat no-text btn-edit-reason"
-    />
-    {{#if showEditReason}}
-      <TextField
-        @value={{this.editReason}}
-        @placeholderKey={{theme-prefix
-          "discourse_table_builder.edit.modal.reason"
+<DModalBody @title={{this.modalAttributes.title}} @class="insert-table-modal">
+  {{#if this.isEditingTable}}
+    <div class="edit-reason">
+      <DButton
+        @icon="info-circle"
+        @title={{theme-prefix
+          "discourse_table_builder.edit.modal.trigger_reason"
         }}
+        @action={{action "showEditReasonField"}}
+        @class="btn btn-icon btn-flat no-text btn-edit-reason"
       />
-    {{/if}}
-  </div>
+      {{#if showEditReason}}
+        <TextField
+          @value={{this.editReason}}
+          @placeholderKey={{theme-prefix
+            "discourse_table_builder.edit.modal.reason"
+          }}
+        />
+      {{/if}}
+    </div>
+  {{/if}}
+
   <div id="spreadsheet" tabindex="1" class="jexcel_container"></div>
 </DModalBody>
 
 <div class="modal-footer">
-  <DButton
-    @class="btn-edit-table"
-    @label={{theme-prefix "discourse_table_builder.edit.modal.create"}}
-    @icon="pencil-alt"
-    @action={{action "editTable"}}
-  />
-  <DButton
-    @class="btn-flat"
-    @label={{theme-prefix "discourse_table_builder.edit.modal.cancel"}}
-    @action={{action "cancelTableEdit"}}
-  />
+  <div class="primary-actions">
+    <DButton
+      @class="btn-insert-table"
+      @label={{this.modalAttributes.insertTable.title}}
+      @icon={{this.modalAttributes.insertTable.icon}}
+      @action={{action "insertTable"}}
+    />
+    <DButton
+      @class="btn-flat"
+      @label={{theme-prefix "discourse_table_builder.edit.modal.cancel"}}
+      @action={{action "cancelTableInsertion"}}
+    />
+  </div>
+
+  <div class="secondary-actions">
+    <DPopover>
+      <DButton class="trigger" @icon="question" />
+      <ul>
+        <h4>{{theme-i18n "discourse_table_builder.modal.help.title"}}</h4>
+        <li>
+          <kbd>
+            {{theme-i18n "discourse_table_builder.modal.help.enter_key"}}
+          </kbd>
+          {{theme-i18n "discourse_table_builder.modal.help.new_row"}}
+        </li>
+        <li>
+          <kbd>
+            {{theme-i18n "discourse_table_builder.modal.help.tab_key"}}
+          </kbd>
+          {{theme-i18n "discourse_table_builder.modal.help.new_col"}}
+        </li>
+        <li>{{theme-i18n "discourse_table_builder.modal.help.options"}}</li>
+      </ul>
+    </DPopover>
+  </div>
 </div>

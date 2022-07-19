@@ -2,6 +2,5 @@
 @import "vendor/jspreadsheet-datatables";
 @import "vendor/jspreadsheet-theme";
 @import "vendor/jsuites";
-
-@import "table-builder";
-@import "table-editor";
+@import "post/table-edit-decorator";
+@import "modal/insert-table-modal";

@@ -35,7 +35,7 @@ export default apiInitializer("0.11.1", (api) => {
 
     return ajax(`/posts/${this.id}`, { type: "GET" })
       .then((post) => {
-        showModal("table-editor-modal", {
+        showModal("insert-table-modal", {
           model: post,
         }).setProperties({
           tableHtml: tempTable,

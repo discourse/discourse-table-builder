@@ -7,16 +7,13 @@ en:
       title: "Table Builder"
       create: "Build Table"
       cancel: "cancel"
-      header: "Header"
-      body: "Body"
-      buttons:
-        add_column: "Add Column"
-        remove_column: "Remove Column"
-        add_row: "Add Row"
-        remove_row: "Remove Row"
-        align_left: "Align Left"
-        align_center: "Align Center"
-        align_right: "Align Right"
+      help:
+        title: "Using the Spreadsheet Editor"
+        enter_key: "Enter"
+        tab_key: "Tab"
+        new_row: "at the end of a row to insert a new row."
+        new_col: "at the end of a column to insert a new  column."
+        options: "Right-click on cells to access more options in a dropdown menu."
     edit:
       btn_edit: "Edit Table"
       modal:
