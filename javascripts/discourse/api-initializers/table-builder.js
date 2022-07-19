@@ -3,22 +3,24 @@ import { action } from "@ember/object";
 import showModal from "discourse/lib/show-modal";
 
 export default apiInitializer("0.11.1", (api) => {
-  api.modifyClass("component:d-editor", {
+  api.modifyClass("controller:composer", {
     pluginId: "discourse-table-builder",
 
     @action
-    showTableBuilder(event) {
-      showModal("table-builder-modal").set("toolbarEvent", event);
+    showTableBuilder() {
+      showModal("insert-table-modal").setProperties({
+        toolbarEvent: this.toolbarEvent,
+        tableHtml: null,
+      });
     },
   });
 
-  api.onToolbarCreate((toolbar) => {
-    toolbar.addButton({
+  api.addToolbarPopupMenuOptionsCallback(() => {
+    return {
       id: "table-builder",
-      group: "insertions",
+      action: "showTableBuilder",
       icon: "table",
-      sendAction: (event) => toolbar.context.send("showTableBuilder", event),
-      title: themePrefix("discourse_table_builder.composer.button"),
-    });
+      label: themePrefix("discourse_table_builder.composer.button"),
+    };
   });
 });

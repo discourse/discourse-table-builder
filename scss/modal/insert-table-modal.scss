@@ -1,9 +1,4 @@
-.open-popup-link {
-  display: inline;
-  margin-inline: 0.25em;
-}
-
-.btn-edit-table {
+.btn-insert-table {
   background: var(--tertiary);
   color: var(--secondary);
 
@@ -23,7 +18,7 @@
   }
 }
 
-.table-editor-modal {
+.insert-table-modal-modal {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -32,6 +27,22 @@
     background: none;
     .d-icon {
       color: var(--primary-high);
+    }
+  }
+
+  .modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .secondary-actions .tippy-content {
+      h4 {
+        color: var(--primary);
+      }
+      li {
+        margin-block: 0.25rem;
+        color: var(--primary-high);
+      }
     }
   }
 }
