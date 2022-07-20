@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /**
  * Jspreadsheet v4.10.1
  *

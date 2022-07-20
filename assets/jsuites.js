@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /**
  * (c) jSuites Javascript Web Components
  *
