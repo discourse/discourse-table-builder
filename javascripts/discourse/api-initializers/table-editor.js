@@ -18,13 +18,13 @@ export default apiInitializer("0.11.1", (api) => {
       "btn",
       "btn-icon-text"
     );
-    const expandIcon = create(
+    const editIcon = create(
       iconNode("pencil-alt", { class: "edit-table-icon" })
     );
     const openPopupText = document.createTextNode(
       I18n.t(themePrefix("discourse_table_builder.edit.btn_edit"))
     );
-    openPopupBtn.append(expandIcon, openPopupText);
+    openPopupBtn.append(editIcon, openPopupText);
     return openPopupBtn;
   }
 
