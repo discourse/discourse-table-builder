@@ -54,7 +54,7 @@ export default apiInitializer("0.11.1", (api) => {
       const popupBtn = createButton();
       popupBtn.setAttribute("data-table-id", index); // sets a table id so each table can be distinctly edited
       table.parentNode.classList.add("fullscreen-table-wrapper");
-      const expandBtn = document.querySelector(".open-popup-link");
+      const expandBtn = table.parentNode.querySelector(".open-popup-link");
 
       if (table.parentNode.contains(expandBtn)) {
         expandBtn.parentNode.insertBefore(popupBtn, expandBtn);
