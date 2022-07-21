@@ -1,45 +1,24 @@
 import { action } from "@ember/object";
 import loadScript from "discourse/lib/load-script";
 import { arrayToTable, findTableRegex, tableToObj } from "../lib/utilities";
-import Component from "@ember/component";
+import GlimmerComponent from "discourse/components/glimmer";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
 import I18n from "I18n";
 import { schedule } from "@ember/runloop";
-
-export default Component.extend({
-  tagName: "",
-  showEditReason: false,
-  spreadsheet: null,
-
-  // Lifecycle Methods:
-  didInsertElement() {
-    this._super(...arguments);
-
-    schedule("afterRender", () => {
-      this.loadLibraries().then(() => {
-        if (this.isEditingTable) {
-          this.buildPopulatedTable(this.tableHtml);
-        } else {
-          this.buildNewTable();
-        }
-      });
-    });
-  },
-
-  willDestroyElement() {
-    this._super(...arguments);
-    this.spreadsheet?.destroy();
-  },
+import { tracked } from "@glimmer/tracking";
+export default class SpreadsheetEditor extends GlimmerComponent {
+  @tracked showEditReason = false;
+  spreadsheet = null;
 
   // Getters:
   get isEditingTable() {
-    if (this.tableHtml) {
+    if (this.args.tableHtml) {
       return true;
     }
 
     return false;
-  },
+  }
 
   get modalAttributes() {
     if (this.isEditingTable) {
@@ -59,22 +38,37 @@ export default Component.extend({
         },
       };
     }
-  },
+  }
 
   // Actions:
   @action
+  createSpreadsheet(spreadsheet) {
+    this.spreadsheet = spreadsheet;
+
+    schedule("afterRender", () => {
+      this.loadLibraries().then(() => {
+        if (this.isEditingTable) {
+          this.buildPopulatedTable(this.args.tableHtml);
+        } else {
+          this.buildNewTable();
+        }
+      });
+    });
+  }
+
+  @action
   showEditReasonField() {
     if (this.showEditReason) {
-      return this.set("showEditReason", false);
+      this.showEditReason = false;
     } else {
-      return this.set("showEditReason", true);
+      this.showEditReason = true;
     }
-  },
+  }
 
   @action
   cancelTableInsertion() {
-    this.triggerModalClose();
-  },
+    this.args.triggerModalClose();
+  }
 
   @action
   insertTable() {
@@ -83,19 +77,19 @@ export default Component.extend({
     const markdownTable = this.buildTableMarkdown(updatedHeaders, updatedData);
 
     if (!this.isEditingTable) {
-      this.toolbarEvent.addText(markdownTable);
-      return this.triggerModalClose();
+      this.args.toolbarEvent.addText(markdownTable);
+      return this.args.triggerModalClose();
     } else {
       return this.updateTable(markdownTable);
     }
-  },
+  }
 
   // Helper Methods:
   loadLibraries() {
     return loadScript(settings.theme_uploads.jsuites).then(() => {
       return loadScript(settings.theme_uploads.jspreadsheet);
     });
-  },
+  }
 
   buildNewTable() {
     const data = [
@@ -111,7 +105,7 @@ export default Component.extend({
     ];
 
     return this.buildSpreadsheet(data, columns);
-  },
+  }
 
   buildPopulatedTable(table) {
     const tableObject = tableToObj(table);
@@ -136,18 +130,16 @@ export default Component.extend({
     });
 
     return this.buildSpreadsheet(tableData, columns);
-  },
+  }
 
   buildSpreadsheet(data, columns, opts = {}) {
-    const spreadsheetContainer = document.querySelector("#spreadsheet");
-
     // eslint-disable-next-line no-undef
-    this.spreadsheet = jspreadsheet(spreadsheetContainer, {
+    this.spreadsheet = jspreadsheet(this.spreadsheet, {
       data,
       columns,
       ...opts,
     });
-  },
+  }
 
   buildUpdatedPost(tableId, raw, newRaw) {
     const tableToEdit = raw.match(findTableRegex());
@@ -160,20 +152,21 @@ export default Component.extend({
     }
 
     return editedTable;
-  },
+  }
 
   updateTable(markdownTable) {
-    const tableId = this.get("tableId");
-    const postId = this.model.id;
+    const tableId = this.args.tableId;
+    const postId = this.args.model.id;
     const newRaw = markdownTable;
+
     const editReason =
-      this.get("editReason") ||
+      this.editReason ||
       I18n.t(themePrefix("discourse_table_builder.edit.default_edit_reason"));
-    const raw = this.model.raw;
+    const raw = this.args.model.raw;
     const newPostRaw = this.buildUpdatedPost(tableId, raw, newRaw);
 
     return this.sendTableUpdate(postId, newPostRaw, editReason);
-  },
+  }
 
   sendTableUpdate(postId, raw, edit_reason) {
     return ajax(`/posts/${postId}.json`, {
@@ -187,9 +180,9 @@ export default Component.extend({
     })
       .catch(popupAjaxError)
       .finally(() => {
-        this.triggerModalClose();
+        this.args.triggerModalClose();
       });
-  },
+  }
 
   buildTableMarkdown(headers, data) {
     const table = [];
@@ -201,5 +194,5 @@ export default Component.extend({
     });
 
     return arrayToTable(table);
-  },
-});
+  }
+}

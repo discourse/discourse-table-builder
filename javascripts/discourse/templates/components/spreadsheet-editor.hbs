@@ -20,7 +20,11 @@
     </div>
   {{/if}}
 
-  <div id="spreadsheet" tabindex="1" class="jexcel_container"></div>
+  <div
+    {{did-insert this.createSpreadsheet}}
+    tabindex="1"
+    class="jexcel_container"
+  ></div>
 </DModalBody>
 
 <div class="modal-footer">
