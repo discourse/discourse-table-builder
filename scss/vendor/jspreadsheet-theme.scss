@@ -24,6 +24,15 @@
 .jexcel {
   border-bottom: 1px solid var(--jexcel_border_color);
   border-right: 1px solid var(--jexcel_border_color);
+  background-color: transparent;
+}
+
+table.jexcel {
+  border-bottom: 1px solid var(--jexcel_border_color);
+}
+
+.jcontextmenu.jexcel_contextmenu hr {
+  border-color: var(--jexcel_border_color);
 }
 
 .jexcel_corner {
@@ -48,6 +57,14 @@
 .jexcel > tbody > tr.selected > td:first-child {
   background-color: var(--jexcel_header_background_highlighted);
   color: var(--jexcel_header_color_highlighted);
+}
+
+table.jexcel > tbody > tr > td:first-child {
+  background-color: var(--jexcel_header_background);
+}
+
+table.jexcel > tbody > tr.selected > td:first-child {
+  background-color: var(--jexcel_header_background_highlighted);
 }
 
 .jexcel > tbody > tr > td.jexcel_cursor a {
