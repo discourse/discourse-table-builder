@@ -213,3 +213,8 @@ table.jexcel > tbody > tr > td {
     border-left: 1px solid var(--jexcel_border_color);
   }
 }
+
+// Hides about item in context menu
+.jcontextmenu > div:not(.contextmenu-line):last-child {
+  display: none;
+}
