@@ -1,3 +1,0 @@
-extend_content_security_policy:
-  type: list
-  default: "script_src: http://localhost:4200/"
