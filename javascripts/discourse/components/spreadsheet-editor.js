@@ -86,8 +86,8 @@ export default class SpreadsheetEditor extends GlimmerComponent {
 
   // Helper Methods:
   loadLibraries() {
-    return loadScript(settings.theme_uploads.jsuites).then(() => {
-      return loadScript(settings.theme_uploads.jspreadsheet);
+    return loadScript(settings.theme_uploads_local.jsuites).then(() => {
+      return loadScript(settings.theme_uploads_local.jspreadsheet);
     });
   }
 
