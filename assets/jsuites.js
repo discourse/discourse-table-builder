@@ -866,28 +866,6 @@
     }
   };
 
-  jSuites.animation.fadeIn = function (element, done) {
-    element.style.display = "";
-    element.classList.add("fade-in");
-    setTimeout(function () {
-      element.classList.remove("fade-in");
-      if (typeof done == "function") {
-        done();
-      }
-    }, 2000);
-  };
-
-  jSuites.animation.fadeOut = function (element, done) {
-    element.classList.add("fade-out");
-    setTimeout(function () {
-      element.style.display = "none";
-      element.classList.remove("fade-out");
-      if (typeof done == "function") {
-        done();
-      }
-    }, 1000);
-  };
-
   jSuites.calendar = function (el, options) {
     // Already created, update options
     if (el.calendar) {
@@ -9885,11 +9863,6 @@
 
     obj.show = function () {
       document.body.appendChild(notification);
-      if (jSuites.getWindowWidth() > 800) {
-        jSuites.animation.fadeIn(notification);
-      } else {
-        jSuites.animation.slideTop(notification, 1);
-      }
     };
 
     obj.hide = function () {
