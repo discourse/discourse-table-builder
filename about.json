@@ -9,8 +9,8 @@
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
   "assets": {
-    "jsuites": "assets/jsuites.js",
-    "jspreadsheet": "assets/jspreadsheet.js"
+    "jsuites": "assets/vendor/jsuites.js",
+    "jspreadsheet": "assets/vendor/jspreadsheet.js"
   },
   "modifiers": {
     "svg_icons": [
