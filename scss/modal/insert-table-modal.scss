@@ -23,6 +23,11 @@
   flex-direction: column;
   align-items: flex-start;
 
+  .modal-inner-container {
+    --modal-max-width: 90%;
+    width: max-content;
+  }
+
   .btn-edit-reason {
     background: none;
     .d-icon {
