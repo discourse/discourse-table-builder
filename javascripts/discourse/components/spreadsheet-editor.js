@@ -7,6 +7,7 @@ import { popupAjaxError } from "discourse/lib/ajax-error";
 import I18n from "I18n";
 import { schedule } from "@ember/runloop";
 import { tracked } from "@glimmer/tracking";
+
 export default class SpreadsheetEditor extends GlimmerComponent {
   @tracked showEditReason = false;
   spreadsheet = null;
