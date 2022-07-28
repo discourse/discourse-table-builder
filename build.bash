@@ -43,7 +43,6 @@ echo "Old vendor assets have been removed."
 if test -f "$JSUITES_CSS_FILE"; then
   echo "$JSUITES_CSS_FILE already exists."
 else
-  # TODO: Remove anything animation related
   # Fetch jsuite stylesheet
   wget $JSUITES_CSS_URL
   echo "$JSUITES_CSS_FILE has been created in $(pwd)"
@@ -57,9 +56,6 @@ else
 
   # Remove conflicting animation classes
   # TODO: Improve below code to handle nested code blocks
-  # sed -i '' '/.fade-in {/,/}/d' $JSUITES_SCSS_FILE_LOCATION
-  # sed -i '' '/.fade-out {/,/}/d' $JSUITES_SCSS_FILE_LOCATION
-
 fi
 
 # Add JSpreadsheet vendor file
@@ -90,7 +86,3 @@ else
   wget $JSPREADSHEET_JS_URL
   mv $JSPREADSHEET_JS_FILE $JSPREADSHEET_JS_FILE_LOCATION
 fi
-
-
-
-# sed '/^server {/,/^    }/d' file
