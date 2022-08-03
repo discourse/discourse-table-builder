@@ -1,0 +1,27 @@
+zh_CN:
+  discourse_table_builder:
+    title: "表格编辑器"
+    composer:
+      button: "插入表格"
+    modal:
+      title: "表格编辑器"
+      create: "创建表格"
+      cancel: "取消"
+      help:
+        title: "使用方法"
+        enter_key: "Enter"
+        tab_key: "Tab"
+        new_row: "插入行"
+        new_col: "插入列"
+        options: "右键单击单元格查看更多选项"
+    edit:
+      btn_edit: "编辑表格"
+      modal:
+        title: "编辑表格"
+        cancel: "取消"
+        create: "更新表格"
+        reason: "为何进行这次编辑？"
+        trigger_reason: "附注编辑原因"
+      default_edit_reason: "编辑原因"
+  theme_metadata:
+    description: "给编辑器添加一个按钮，用 markdown 轻松创建表格"
