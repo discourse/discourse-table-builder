@@ -9,7 +9,6 @@ import { popupAjaxError } from "discourse/lib/ajax-error";
 
 export default apiInitializer("0.11.1", (api) => {
   const site = api.container.lookup("site:main");
-  const currentUser = api.getCurrentUser();
 
   function createButton() {
     const openPopupBtn = document.createElement("button");
