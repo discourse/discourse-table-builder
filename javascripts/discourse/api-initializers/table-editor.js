@@ -9,7 +9,6 @@ import { popupAjaxError } from "discourse/lib/ajax-error";
 
 export default apiInitializer("0.11.1", (api) => {
   const site = api.container.lookup("site:main");
-  const currentUser = api.getCurrentUser();
 
   function createButton() {
     const openPopupBtn = document.createElement("button");
@@ -69,9 +68,9 @@ export default apiInitializer("0.11.1", (api) => {
 
   api.decorateCookedElement(
     (post, helper) => {
-      const postOwner = helper.widget.attrs.username;
+      const canEdit = helper.widget.attrs.canEdit;
 
-      if (postOwner !== currentUser.username) {
+      if (!canEdit) {
         return;
       }
 
