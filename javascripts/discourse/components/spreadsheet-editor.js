@@ -1,6 +1,6 @@
 import { action } from "@ember/object";
 import loadScript from "discourse/lib/load-script";
-import { arrayToTable, findTableRegex, tableToObj } from "../lib/utilities";
+import { arrayToTable, findTableRegex, tokenRange } from "../lib/utilities";
 import GlimmerComponent from "discourse/components/glimmer";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
@@ -49,7 +49,7 @@ export default class SpreadsheetEditor extends GlimmerComponent {
     schedule("afterRender", () => {
       this.loadLibraries().then(() => {
         if (this.isEditingTable) {
-          this.buildPopulatedTable(this.args.tableHtml);
+          this.buildPopulatedTable(this.args.tableTokens);
         } else {
           this.buildNewTable();
         }
@@ -108,29 +108,46 @@ export default class SpreadsheetEditor extends GlimmerComponent {
     return this.buildSpreadsheet(data, columns);
   }
 
-  buildPopulatedTable(table) {
-    const tableObject = tableToObj(table);
-    const headings = [];
-    const tableData = [];
+  extractTableContent(data) {
+    return data
+      .flat()
+      .filter((t) => t.type === "inline")
+      .map((t) => t.content);
+  }
 
-    tableObject.forEach((object) => {
-      // Build Headings
-      if (!headings.includes(...Object.keys(object))) {
-        headings.push(...Object.keys(object));
+  buildPopulatedTable(tableTokens) {
+    const contentRows = tokenRange(tableTokens, "tr_open", "tr_close");
+    const rows = [];
+    let headings;
+    const rowWidthFactor = 8;
+
+    contentRows.forEach((row, index) => {
+      if (index === 0) {
+        // headings
+        headings = this.extractTableContent(row).map((heading) => {
+          return {
+            title: heading,
+            width: heading.length * rowWidthFactor,
+          };
+        });
+      } else {
+        // rows:
+        const rowContent = this.extractTableContent(row);
+
+        // If row content is larger than header, update column width:
+        rowContent.forEach((c, i) => {
+          const colWidth = rowContent[i].length * rowWidthFactor;
+
+          if (headings[i].width < colWidth) {
+            headings[i].width = colWidth;
+          }
+        });
+
+        rows.push(rowContent);
       }
-
-      // Build Table Data
-      tableData.push([...Object.values(object)]);
     });
 
-    const columns = headings.map((heading) => {
-      return {
-        title: heading,
-        width: heading.length * 15,
-      };
-    });
-
-    return this.buildSpreadsheet(tableData, columns);
+    return this.buildSpreadsheet(rows, headings);
   }
 
   buildSpreadsheet(data, columns, opts = {}) {

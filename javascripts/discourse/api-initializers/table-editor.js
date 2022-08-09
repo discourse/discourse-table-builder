@@ -6,9 +6,13 @@ import { iconNode } from "discourse-common/lib/icon-library";
 import { create } from "virtual-dom";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
-
+import Session from "discourse/models/session";
+import loadScript from "discourse/lib/load-script";
+import PrettyText, { buildOptions } from "pretty-text/pretty-text";
+import { tokenRange } from "../lib/utilities";
 export default apiInitializer("0.11.1", (api) => {
-  const site = api.container.lookup("site:main");
+  const site = api.container.lookup("site:main"),
+    siteSettings = api.container.lookup("site-settings:main");
 
   function createButton() {
     const openPopupBtn = document.createElement("button");
@@ -35,12 +39,26 @@ export default apiInitializer("0.11.1", (api) => {
 
     return ajax(`/posts/${this.id}`, { type: "GET" })
       .then((post) => {
-        showModal("insert-table-modal", {
-          model: post,
-        }).setProperties({
-          tableHtml: tempTable,
-          tableId,
-        });
+        let markdownItURL = Session.currentProp("markdownItURL");
+
+        if (markdownItURL) {
+          loadScript(markdownItURL).then(() => {
+            const prettyText = new PrettyText(buildOptions({ siteSettings }));
+            const tokens = prettyText.opts.engine.parse(post.raw, {
+              references: {},
+            });
+            const allTables = tokenRange(tokens, "table_open", "table_close");
+            const tableTokens = allTables[tableId];
+
+            showModal("insert-table-modal", {
+              model: post,
+            }).setProperties({
+              tableHtml: tempTable,
+              tableId,
+              tableTokens,
+            });
+          });
+        }
       })
       .catch(popupAjaxError);
   }
