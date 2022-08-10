@@ -14,7 +14,7 @@ export default class SpreadsheetEditor extends GlimmerComponent {
 
   // Getters:
   get isEditingTable() {
-    if (this.args.tableHtml) {
+    if (this.args.tableTokens) {
       return true;
     }
 

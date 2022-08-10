@@ -10,7 +10,7 @@ export default apiInitializer("0.11.1", (api) => {
     showTableBuilder() {
       showModal("insert-table-modal").setProperties({
         toolbarEvent: this.toolbarEvent,
-        tableHtml: null,
+        tableTokens: null,
       });
     },
   });
