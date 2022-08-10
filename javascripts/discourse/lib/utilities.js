@@ -6,7 +6,7 @@
  * @see {@link https://github.com/Ygilany/array-to-table|GitHub}:
  *
  * @param  {Array} array    Array of objects
- * @param  {Array} columns  Optional, table column names, otherwise taken from the keys of the first object
+ * @param  {String} columns  Optional, table column names, otherwise taken from the keys of the first object
  *
  * @return {String} Markdown table
  */
