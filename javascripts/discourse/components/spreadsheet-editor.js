@@ -11,6 +11,7 @@ import { tracked } from "@glimmer/tracking";
 export default class SpreadsheetEditor extends GlimmerComponent {
   @tracked showEditReason = false;
   spreadsheet = null;
+  defaultColWidth = 150;
 
   // Getters:
   get isEditingTable() {
@@ -100,9 +101,24 @@ export default class SpreadsheetEditor extends GlimmerComponent {
     ];
 
     const columns = [
-      { title: "Column 1", width: 150 },
-      { title: "Column 2", width: 150 },
-      { title: "Column 3", width: 150 },
+      {
+        title: I18n.t(
+          themePrefix("discourse_table_builder.default_header.col_1")
+        ),
+        width: this.defaultColWidth,
+      },
+      {
+        title: I18n.t(
+          themePrefix("discourse_table_builder.default_header.col_2")
+        ),
+        width: this.defaultColWidth,
+      },
+      {
+        title: I18n.t(
+          themePrefix("discourse_table_builder.default_header.col_3")
+        ),
+        width: this.defaultColWidth,
+      },
     ];
 
     return this.buildSpreadsheet(data, columns);
@@ -127,23 +143,16 @@ export default class SpreadsheetEditor extends GlimmerComponent {
         headings = this.extractTableContent(row).map((heading) => {
           return {
             title: heading,
-            width: heading.length * rowWidthFactor,
+            width: Math.max(
+              heading.length * rowWidthFactor,
+              this.defaultColWidth
+            ),
+            align: "left",
           };
         });
       } else {
         // rows:
-        const rowContent = this.extractTableContent(row);
-
-        // If row content is larger than header, update column width:
-        rowContent.forEach((c, i) => {
-          const colWidth = rowContent[i].length * rowWidthFactor;
-
-          if (headings[i].width < colWidth) {
-            headings[i].width = colWidth;
-          }
-        });
-
-        rows.push(rowContent);
+        rows.push(this.extractTableContent(row));
       }
     });
 
@@ -155,6 +164,8 @@ export default class SpreadsheetEditor extends GlimmerComponent {
     this.spreadsheet = jspreadsheet(this.spreadsheet, {
       data,
       columns,
+      defaultColAlign: "left",
+      wordWrap: true,
       ...opts,
     });
   }
