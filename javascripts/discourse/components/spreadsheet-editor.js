@@ -101,9 +101,24 @@ export default class SpreadsheetEditor extends GlimmerComponent {
     ];
 
     const columns = [
-      { title: "Column 1", width: this.defaultColWidth },
-      { title: "Column 2", width: this.defaultColWidth },
-      { title: "Column 3", width: this.defaultColWidth },
+      {
+        title: I18n.t(
+          themePrefix("discourse_table_builder.default_header.col_1")
+        ),
+        width: this.defaultColWidth,
+      },
+      {
+        title: I18n.t(
+          themePrefix("discourse_table_builder.default_header.col_2")
+        ),
+        width: this.defaultColWidth,
+      },
+      {
+        title: I18n.t(
+          themePrefix("discourse_table_builder.default_header.col_3")
+        ),
+        width: this.defaultColWidth,
+      },
     ];
 
     return this.buildSpreadsheet(data, columns);
