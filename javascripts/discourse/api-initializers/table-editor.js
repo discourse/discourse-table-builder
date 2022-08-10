@@ -33,8 +33,6 @@ export default apiInitializer("0.11.1", (api) => {
   }
 
   function generateModal(event) {
-    const table = event.target.parentNode.lastElementChild;
-    const tempTable = table.cloneNode(true);
     const tableId = event.target.getAttribute("data-table-id");
 
     return ajax(`/posts/${this.id}`, { type: "GET" })
@@ -53,7 +51,6 @@ export default apiInitializer("0.11.1", (api) => {
             showModal("insert-table-modal", {
               model: post,
             }).setProperties({
-              tableHtml: tempTable,
               tableId,
               tableTokens,
             });
