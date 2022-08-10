@@ -23,7 +23,7 @@
 
 .jexcel {
   border-bottom: 1px solid var(--jexcel_border_color);
-  border-right: 1px solid var(--jexcel_border_color);
+  border-right: transparent;
   background-color: transparent;
 }
 
@@ -225,7 +225,7 @@ table.jexcel > tbody > tr.selected > td:first-child {
 table.jexcel > thead > tr > td {
   border-top: 1px solid var(--jexcel_border_color);
   border-right: 1px solid var(--jexcel_border_color);
-  border-bottom: none;
+  border-bottom: 1px solid var(--jexcel_border_color);
   background-color: var(--jexcel_header_background);
 
   &:first-child {
