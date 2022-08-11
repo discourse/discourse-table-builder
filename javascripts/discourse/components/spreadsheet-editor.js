@@ -5,14 +5,14 @@ import {
   findTableRegex,
   tokenRange,
 } from "../discourse-table-builder/lib/utilities";
-import GlimmerComponent from "discourse/components/glimmer";
+import Component from "@glimmer/component";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
 import I18n from "I18n";
 import { schedule } from "@ember/runloop";
 import { tracked } from "@glimmer/tracking";
 
-export default class SpreadsheetEditor extends GlimmerComponent {
+export default class SpreadsheetEditor extends Component {
   @tracked showEditReason = false;
   spreadsheet = null;
   defaultColWidth = 150;
