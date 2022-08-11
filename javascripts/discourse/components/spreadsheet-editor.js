@@ -1,6 +1,10 @@
 import { action } from "@ember/object";
 import loadScript from "discourse/lib/load-script";
-import { arrayToTable, findTableRegex, tokenRange } from "../lib/utilities";
+import {
+  arrayToTable,
+  findTableRegex,
+  tokenRange,
+} from "../discourse-table-builder/lib/utilities";
 import GlimmerComponent from "discourse/components/glimmer";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
