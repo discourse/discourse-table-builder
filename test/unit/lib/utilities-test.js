@@ -1,8 +1,7 @@
 import { discourseModule } from "discourse/tests/helpers/qunit-helpers";
 import { test } from "qunit";
 import markdownTableFixture from "../../fixtures/markdown-table-fixture";
-import arrayToTable from "../../helpers/arrayToTable";
-// import { arrayToTable } from "../../../javascripts/discourse/lib/utilities"; // TODO import from original method
+import { arrayToTable } from "../../../discourse-table-builder/lib/utilities";
 
 discourseModule("Unit | Utilities", function () {
   test("arrayToTable", function (assert) {
