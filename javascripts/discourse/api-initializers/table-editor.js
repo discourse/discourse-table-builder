@@ -90,7 +90,7 @@ export default apiInitializer("0.11.1", (api) => {
       }
 
       schedule("afterRender", () => {
-        const tables = post.querySelectorAll("table");
+        const tables = post.querySelectorAll(".md-table table");
         generatePopups(tables, helper.widget.attrs);
       });
     },
