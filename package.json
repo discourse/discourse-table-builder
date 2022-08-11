@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "repository": "https://github.com/discourse/discourse-table-builder",
   "author": "Keegan George",
-  "license": "GPL-2.0-or-later",
+  "license": "MIT",
   "scripts": {
     "build": "bash ./build.bash"
   },
