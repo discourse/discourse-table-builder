@@ -2,11 +2,11 @@
   "name": "Table Builder",
   "component": true,
   "author": "Keegan George",
-  "license_url": "TODO",
+  "license_url": "https://github.com/discourse/discourse-table-builder/blob/main/LICENSE.txt",
   "about_url": "TODO",
   "learn_more": "TODO",
   "theme_version": "0.0.1",
-  "minimum_discourse_version": null,
+  "minimum_discourse_version": "2.9.0",
   "maximum_discourse_version": null,
   "assets": {
     "jsuites": "assets/vendor/jsuites.js",
