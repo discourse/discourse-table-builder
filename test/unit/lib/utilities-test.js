@@ -1,6 +1,7 @@
 import { discourseModule } from "discourse/tests/helpers/qunit-helpers";
 import { test } from "qunit";
-import markdownTableFixture from "../../fixtures/markdown-table-fixture";
+import mdTableFixture from "../../fixtures/md-table-fixture";
+import mdTableSpecialCharsFixture from "../../fixtures/md-table-special-chars-fixture";
 import { arrayToTable } from "../../../discourse-table-builder/lib/utilities";
 
 discourseModule("Unit | Utilities", function () {
@@ -25,8 +26,32 @@ discourseModule("Unit | Utilities", function () {
 
     assert.strictEqual(
       arrayToTable(tableData),
-      markdownTableFixture,
+      mdTableFixture,
       "it creates a markdown table from an array of objects (with headers as keys)"
+    );
+
+    const specialCharsTableData = [
+      {
+        Make: "Toyota",
+        Model: "Supra",
+        Price: "$50,000",
+      },
+      {
+        Make: "",
+        Model: "Celica",
+        Price: "$20,000",
+      },
+      {
+        Make: "Nissan",
+        Model: "GTR",
+        Price: "$80,000",
+      },
+    ];
+
+    assert.strictEqual(
+      arrayToTable(specialCharsTableData),
+      mdTableSpecialCharsFixture,
+      "it creates a markdown table with special characters in correct alignment"
     );
   });
 });
