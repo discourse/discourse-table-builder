@@ -25,7 +25,7 @@
 
   .modal-inner-container {
     --modal-max-width: 90%;
-    width: max-content;
+    width: 100vw;
   }
 
   .modal-body {
@@ -52,6 +52,17 @@
       li {
         margin-block: 0.25rem;
         color: var(--primary-high);
+      }
+    }
+  }
+
+  .jexcel_container {
+    padding: 0.5em;
+    min-width: 100%;
+    .jexcel_content {
+      min-width: 100%;
+      table.jexcel {
+        min-width: 100%;
       }
     }
   }
