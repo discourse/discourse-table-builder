@@ -20,11 +20,13 @@
     </div>
   {{/if}}
 
-  <div
-    {{did-insert this.createSpreadsheet}}
-    tabindex="1"
-    class="jexcel_container"
-  ></div>
+  <ConditionalLoadingSpinner @condition={{this.loading}}>
+    <div
+      {{did-insert this.createSpreadsheet}}
+      tabindex="1"
+      class="jexcel_container"
+    ></div>
+  </ConditionalLoadingSpinner>
 </DModalBody>
 
 <div class="modal-footer">
