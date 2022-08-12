@@ -10,9 +10,10 @@ import Session from "discourse/models/session";
 import loadScript from "discourse/lib/load-script";
 import PrettyText, { buildOptions } from "pretty-text/pretty-text";
 import { tokenRange } from "../discourse-table-builder/lib/utilities";
+
 export default apiInitializer("0.11.1", (api) => {
-  const site = api.container.lookup("site:main"),
-    siteSettings = api.container.lookup("site-settings:main");
+  const site = api.container.lookup("service:site");
+  const siteSettings = api.container.lookup("service:site-settings");
 
   function createButton() {
     const openPopupBtn = document.createElement("button");
