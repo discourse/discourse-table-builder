@@ -102,6 +102,9 @@ export default class SpreadsheetEditor extends Component {
       ["", "", ""],
       ["", "", ""],
       ["", "", ""],
+      ["", "", ""],
+      ["", "", ""],
+      ["", "", ""],
     ];
 
     const columns = [
@@ -120,6 +123,12 @@ export default class SpreadsheetEditor extends Component {
       {
         title: I18n.t(
           themePrefix("discourse_table_builder.default_header.col_3")
+        ),
+        width: this.defaultColWidth,
+      },
+      {
+        title: I18n.t(
+          themePrefix("discourse_table_builder.default_header.col_4")
         ),
         width: this.defaultColWidth,
       },
