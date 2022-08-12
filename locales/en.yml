@@ -27,5 +27,6 @@ en:
       col_1: "Column 1"
       col_2: "Column 2"
       col_3: "Column 3"
+      col_4: "Column 4"
   theme_metadata:
     description: "Adds a button to the composer to easily build tables in markdown"
