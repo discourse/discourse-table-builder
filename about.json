@@ -6,7 +6,7 @@
   "about_url": "TODO",
   "learn_more": "TODO",
   "theme_version": "0.0.1",
-  "minimum_discourse_version": "2.9.0",
+  "minimum_discourse_version": "2.9.0.beta9",
   "maximum_discourse_version": null,
   "assets": {
     "jsuites": "assets/vendor/jsuites.js",
