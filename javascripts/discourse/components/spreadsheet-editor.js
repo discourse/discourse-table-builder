@@ -184,6 +184,8 @@ export default class SpreadsheetEditor extends Component {
       editedTable = raw.replace(findTableRegex(), newRaw);
     }
 
+    // replace null characters
+    editedTable = editedTable.replace(/\0/g, "\ufffd");
     return editedTable;
   }
 
