@@ -173,12 +173,18 @@ export default class SpreadsheetEditor extends Component {
   }
 
   buildSpreadsheet(data, columns, opts = {}) {
+    const postNumber = this.args.model?.post_number;
+    const exportFileName = postNumber
+      ? `post-${postNumber}-table-export`
+      : `post-table-export`;
+
     // eslint-disable-next-line no-undef
     this.spreadsheet = jspreadsheet(this.spreadsheet, {
       data,
       columns,
       defaultColAlign: "left",
       wordWrap: true,
+      csvFileName: exportFileName,
       ...opts,
     });
   }
