@@ -11,7 +11,6 @@ import { tokenRange } from "../discourse-table-builder/lib/utilities";
 
 export default apiInitializer("0.11.1", (api) => {
   const site = api.container.lookup("service:site");
-  const siteSettings = api.container.lookup("service:site-settings");
 
   function createButton() {
     const openPopupBtn = document.createElement("button");
