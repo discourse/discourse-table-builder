@@ -16,6 +16,7 @@ export default class SpreadsheetEditor extends Component {
   @tracked showEditReason = false;
   spreadsheet = null;
   defaultColWidth = 150;
+  @tracked loading = null;
 
   // Getters:
   get isEditingTable() {
@@ -92,9 +93,12 @@ export default class SpreadsheetEditor extends Component {
 
   // Helper Methods:
   loadLibraries() {
-    return loadScript(settings.theme_uploads_local.jsuites).then(() => {
-      return loadScript(settings.theme_uploads_local.jspreadsheet);
-    });
+    this.loading = true;
+    return loadScript(settings.theme_uploads_local.jsuites)
+      .then(() => {
+        return loadScript(settings.theme_uploads_local.jspreadsheet);
+      })
+      .finally(() => (this.loading = false));
   }
 
   buildNewTable() {
