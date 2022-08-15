@@ -16,7 +16,7 @@ export default class SpreadsheetEditor extends Component {
   @tracked showEditReason = false;
   spreadsheet = null;
   defaultColWidth = 150;
-  loading = null;
+  @tracked loading = null;
 
   // Getters:
   get isEditingTable() {
