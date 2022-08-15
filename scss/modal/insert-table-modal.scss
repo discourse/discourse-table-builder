@@ -26,6 +26,11 @@
   .modal-inner-container {
     --modal-max-width: $reply-area-max-width;
     width: $reply-area-max-width;
+
+    @media screen and (max-width: 1200px) {
+      --modal-max-width: 90%;
+      width: 100vw;
+    }
   }
 
   .modal-body {
