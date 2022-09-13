@@ -5,3 +5,34 @@
 # https://translate.discourse.org/
 
 he:
+  discourse_table_builder:
+    title: "בונה טבלאות"
+    composer:
+      button: "הוספת טבלה"
+    modal:
+      title: "בונה טבלאות"
+      create: "בניית טבלה"
+      cancel: "ביטול"
+      help:
+        title: "באמצעות עורך גיליונות הנתונים"
+        enter_key: "Enter"
+        tab_key: "Tab"
+        new_row: "בסוף השורה כדי להוסיף שורה חדשה."
+        new_col: "בסוף העמודה כדי להוסיף עמודה חדשה."
+        options: "לחיצה ימנית על תאים מעניקה גישה לאפשרויות נוספות דרך תפריט נפתח."
+    edit:
+      btn_edit: "עריכת טבלה"
+      modal:
+        title: "עריכת טבלה"
+        cancel: "ביטול"
+        create: "שמירת עריכה"
+        reason: "מה סיבת העריכה?"
+        trigger_reason: "הוספת סיבה לעריכה"
+      default_edit_reason: "עדכון טבלה עם עורך טבלאות"
+    default_header:
+      col_1: "עמודה 1"
+      col_2: "עמודה 2"
+      col_3: "עמודה 3"
+      col_4: "עמודה 4"
+  theme_metadata:
+    description: "מוסיף כפתור למחבר ההודעות כדי לבנות טבלאות ב־Markdown בקלות"

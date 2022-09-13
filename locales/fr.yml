@@ -5,3 +5,34 @@
 # https://translate.discourse.org/
 
 fr:
+  discourse_table_builder:
+    title: "Éditeur de tableaux"
+    composer:
+      button: "Insérer un tableau"
+    modal:
+      title: "Éditeur de tableaux"
+      create: "Créer un tableau"
+      cancel: "annuler"
+      help:
+        title: "Utiliser l'éditeur de tableaux"
+        enter_key: "Utiliser le tableur"
+        tab_key: "Tab"
+        new_row: "à la fin d'une ligne pour en insérer une nouvelle."
+        new_col: "à la fin d'une colonne pour en insérer une nouvelle."
+        options: "Clic droit sur une cellule pour afficher des options contextuelles."
+    edit:
+      btn_edit: "Modifier le tableau"
+      modal:
+        title: "Modifier le tableau"
+        cancel: "annuler"
+        create: "Enregistrer les modifications"
+        reason: "pourquoi modifiez-vous le tableau ?"
+        trigger_reason: "Ajouter la raison de la modification"
+      default_edit_reason: "Modifier avec l'éditeur de tableau"
+    default_header:
+      col_1: "Colonne 1"
+      col_2: "Colonne 2"
+      col_3: "Colonne 3"
+      col_4: "Colonne 4"
+  theme_metadata:
+    description: "Ajouter un bouton à l'éditeur pour créer facilement des tableaux en Markdown"
