@@ -73,6 +73,9 @@ export default apiInitializer("0.11.1", (api) => {
 
   api.decorateCookedElement(
     (post, helper) => {
+      if (!helper || !post) {
+        return;
+      }
       const canEdit = helper.widget.attrs.canEdit;
 
       if (!canEdit) {
