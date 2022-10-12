@@ -16,7 +16,6 @@ export default apiInitializer("0.11.1", (api) => {
     const openPopupBtn = document.createElement("button");
     openPopupBtn.classList.add(
       "open-popup-link",
-      "btn-edit-md-table",
       "btn-default",
       "btn",
       "btn-icon-text"

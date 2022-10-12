@@ -64,12 +64,9 @@ acceptance("Table Builder - Edit Table", function (needs) {
   test("Can see edit button on post with table", async function (assert) {
     await visit("/t/960");
     await focus(document.querySelector(".cooked .md-table"));
-    assert.ok(exists("button.btn-edit-md-table"), "Edit Table button exists");
-    assert.ok(
-      visible("button.btn-edit-md-table"),
-      "Edit Table button is visible"
-    );
-    await click("button.btn-edit-md-table");
+    assert.ok(exists("button.btn-edit-table"), "Edit Table button exists");
+    assert.ok(visible("button.btn-edit-table"), "Edit Table button is visible");
+    await click("button.btn-edit-table");
     assert.ok(
       exists(".insert-table-modal-modal"),
       "Table Builder modal exists"
