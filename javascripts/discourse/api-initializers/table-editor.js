@@ -18,7 +18,8 @@ export default apiInitializer("0.11.1", (api) => {
       "open-popup-link",
       "btn-default",
       "btn",
-      "btn-icon-text"
+      "btn-icon-text",
+      "btn-edit-table"
     );
     const editIcon = create(
       iconNode("pencil-alt", { class: "edit-table-icon" })
