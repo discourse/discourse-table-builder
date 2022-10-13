@@ -50,6 +50,10 @@ table.jexcel {
   border-color: var(--jexcel_border_color);
 }
 
+.jexcel_container .jcontextmenu > div a {
+  color: var(--jexcel_menu_color);
+}
+
 .jexcel_corner {
   background-color: var(--tertiary);
 }
