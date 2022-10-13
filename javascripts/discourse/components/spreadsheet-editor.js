@@ -200,7 +200,7 @@ export default class SpreadsheetEditor extends Component {
     if (tableToEdit.length > 1) {
       editedTable = raw.replace(tableToEdit[tableId], newRaw);
     } else {
-      editedTable = raw.replace(findTableRegex(), newRaw);
+      editedTable = raw.replace(tableToEdit[0], newRaw);
     }
 
     // replace null characters
