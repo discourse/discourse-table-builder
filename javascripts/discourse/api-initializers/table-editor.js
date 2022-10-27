@@ -10,8 +10,6 @@ import { parseAsync } from "discourse/lib/text";
 import { tokenRange } from "../discourse-table-builder/lib/utilities";
 
 export default apiInitializer("0.11.1", (api) => {
-  const site = api.container.lookup("service:site");
-
   function createButton() {
     const openPopupBtn = document.createElement("button");
     openPopupBtn.classList.add(
@@ -53,10 +51,6 @@ export default apiInitializer("0.11.1", (api) => {
 
   function generatePopups(tables, attrs) {
     tables.forEach((table, index) => {
-      if (site.isMobileDevice) {
-        return;
-      }
-
       const popupBtn = createButton();
       popupBtn.setAttribute("data-table-id", index); // sets a table id so each table can be distinctly edited
       table.parentNode.classList.add("fullscreen-table-wrapper");

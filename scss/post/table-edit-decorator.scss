@@ -10,3 +10,32 @@
   -ms-user-select: none;
   user-select: none;
 }
+
+.fullscreen-table-wrapper:hover .btn-edit-table {
+  opacity: 100%;
+}
+
+.mobile-view {
+  .btn-edit-table {
+    display: none;
+  }
+
+  .fullscreen-table-wrapper {
+    position: relative;
+    border: 1px solid transparent;
+
+    &:hover {
+      border: 1px solid var(--primary-low);
+      table {
+        opacity: 0.5;
+      }
+      .btn-edit-table {
+        z-index: 2;
+        display: block;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+      }
+    }
+  }
+}
