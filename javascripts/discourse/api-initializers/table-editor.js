@@ -59,7 +59,11 @@ export default apiInitializer("0.11.1", (api) => {
       if (table.parentNode.contains(expandBtn)) {
         expandBtn.parentNode.insertBefore(popupBtn, expandBtn);
       } else {
-        table.parentNode.insertBefore(popupBtn, table);
+        const buttonWrapper = document.createElement("div");
+        buttonWrapper.classList.add("fullscreen-table-wrapper-buttons");
+        buttonWrapper.append(popupBtn);
+        popupBtn.addEventListener("click", generateModal, false);
+        table.parentNode.insertBefore(buttonWrapper, table);
       }
 
       popupBtn.addEventListener("click", generateModal.bind(attrs), false);
