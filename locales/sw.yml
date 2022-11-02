@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 sw:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Hifadhi"

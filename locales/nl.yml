@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 nl:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Opslaan"

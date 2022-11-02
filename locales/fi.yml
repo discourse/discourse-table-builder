@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 fi:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Tallenna"

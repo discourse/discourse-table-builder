@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 da:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Gem"

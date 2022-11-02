@@ -25,7 +25,7 @@ fr:
       modal:
         title: "Modifier le tableau"
         cancel: "annuler"
-        create: "Enregistrer les modifications"
+        create: "Enregistrer"
         reason: "pourquoi modifiez-vous le tableau ?"
         trigger_reason: "Ajouter la raison de la modification"
       default_edit_reason: "Modifier avec l'éditeur de tableau"

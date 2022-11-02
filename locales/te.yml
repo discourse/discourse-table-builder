@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 te:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "భద్రపరుచు"

@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 tr_TR:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Kaydet"
