@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 ko:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "저장하기"

@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 es:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Guardar"

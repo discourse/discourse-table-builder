@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 hy:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Պահպանել"

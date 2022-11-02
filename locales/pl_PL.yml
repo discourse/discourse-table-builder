@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 pl_PL:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Zapisz"

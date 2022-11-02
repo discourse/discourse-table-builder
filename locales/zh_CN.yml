@@ -25,7 +25,7 @@ zh_CN:
       modal:
         title: "编辑表格"
         cancel: "取消"
-        create: "更新表格"
+        create: "保存"
         reason: "为何进行这次编辑？"
         trigger_reason: "附注编辑原因"
       default_edit_reason: "编辑原因"

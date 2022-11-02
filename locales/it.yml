@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 it:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Salva"

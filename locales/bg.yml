@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 bg:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Запази "
