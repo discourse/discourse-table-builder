@@ -6,6 +6,33 @@
 
 nl:
   discourse_table_builder:
+    title: "Tabelbouwer"
+    composer:
+      button: "Tabel invoegen"
+    modal:
+      title: "Tabelbouwer"
+      create: "Tabel bouwen"
+      cancel: "annuleren"
+      help:
+        title: "Spreadsheeteditor wordt gebruikt"
+        enter_key: "Enter"
+        tab_key: "Tab"
+        new_row: "aan het einde van een rij om een nieuwe rij in te voegen."
+        new_col: "aan het einde van een kolom om een nieuwe kolom in te voegen."
+        options: "Rechtsklik op cellen voor meer opties in een vervolgkeuzemenu."
     edit:
+      btn_edit: "Tabel bewerken"
       modal:
+        title: "Tabel bewerken"
+        cancel: "annuleren"
         create: "Opslaan"
+        reason: "waarom bewerk je?"
+        trigger_reason: "Reden voor bewerking toevoegen"
+      default_edit_reason: "Tabel bijwerken met Tabeleditor"
+    default_header:
+      col_1: "Kolom 1"
+      col_2: "Kolom 2"
+      col_3: "Kolom 3"
+      col_4: "Kolom 4"
+  theme_metadata:
+    description: "Voegt een knop toe aan de editor om eenvoudig tabellen te bouwen met markdown"
