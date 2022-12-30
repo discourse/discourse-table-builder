@@ -197,10 +197,10 @@ export default class SpreadsheetEditor extends Component {
     const tableToEdit = raw.match(findTableRegex());
     let editedTable;
 
-    if (tableToEdit.length > 1) {
+    if (tableToEdit.length) {
       editedTable = raw.replace(tableToEdit[tableId], newRaw);
     } else {
-      editedTable = raw.replace(tableToEdit[0], newRaw);
+      return raw;
     }
 
     // replace null characters
