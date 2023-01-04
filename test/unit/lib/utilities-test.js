@@ -2,7 +2,10 @@ import { discourseModule } from "discourse/tests/helpers/qunit-helpers";
 import { test } from "qunit";
 import mdTableFixture from "../../fixtures/md-table-fixture";
 import mdTableSpecialCharsFixture from "../../fixtures/md-table-special-chars-fixture";
-import { arrayToTable } from "../../../discourse-table-builder/lib/utilities";
+import {
+  arrayToTable,
+  findTableRegex,
+} from "../../../discourse-table-builder/lib/utilities";
 
 discourseModule("Unit | Utilities", function () {
   test("arrayToTable", function (assert) {
@@ -52,6 +55,59 @@ discourseModule("Unit | Utilities", function () {
       arrayToTable(specialCharsTableData),
       mdTableSpecialCharsFixture,
       "it creates a markdown table with special characters in correct alignment"
+    );
+  });
+
+  test("findTableRegex", function (assert) {
+    const oneTable = `|Make|Model|Year|\r\n|--- | --- | ---|\r\n|Toyota|Supra|1998|`;
+
+    assert.strictEqual(
+      oneTable.match(findTableRegex()).length,
+      1,
+      "finds one table in markdown"
+    );
+
+    const threeTables = `## Heading
+|Table1 | PP Port | Device | DP | Medium|
+|--- | --- | --- | --- | ---|
+| Something | (1+2) | Dude | Mate | Bro |
+
+|Table2 | PP Port | Device | DP | Medium|
+|--- | --- | --- | --- | ---|
+| Something | (1+2) | Dude | Mate | Bro |
+| ✅  | (1+2) | Dude | Mate | Bro |
+| ✅  | (1+2) | Dude | Mate | Bro |
+
+|Table3 | PP Port | Device | DP |
+|--- | --- | --- | --- |
+| Something | (1+2) | Dude | Sound |
+|  | (1+2) | Dude | OW |
+|  | (1+2) | Dude | OI |
+
+Random extras
+    `;
+
+    assert.strictEqual(
+      threeTables.match(findTableRegex()).length,
+      3,
+      "finds three tables in markdown"
+    );
+
+    const ignoreUploads = `
+:information_source: Something
+
+[details=Example of a cross-connect in Equinix]
+![image|603x500, 100%](upload://fURYa9mt00rXZITdYhhyeHFJE8J.png)
+[/details]
+
+|Table1 | PP Port | Device | DP | Medium|
+|--- | --- | --- | --- | ---|
+| Something | (1+2) | Dude | Mate | Bro |
+`;
+    assert.strictEqual(
+      ignoreUploads.match(findTableRegex()).length,
+      1,
+      "finds on table, ignoring upload markup"
     );
   });
 });

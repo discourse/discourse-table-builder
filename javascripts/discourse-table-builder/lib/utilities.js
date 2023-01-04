@@ -46,10 +46,10 @@ export function arrayToTable(array, columns) {
 
 /**
  *
- * @returns a regular experssion finding all markdown tables
+ * @returns a regular expression finding all markdown tables
  */
 export function findTableRegex() {
-  return /((\r?){2}|^)([^\r\n]*\|[^\r\n]*(\r?\n)?)+(?=(\r?\n){2}|$)/gm;
+  return /((\r?){2}|^)(^\|[^\r\n]*(\r?\n)?)+(?=(\r?\n){2}|$)/gm;
 }
 
 export function tokenRange(tokens, start, end) {
