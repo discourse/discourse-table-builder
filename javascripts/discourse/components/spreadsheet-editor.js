@@ -14,9 +14,9 @@ import { tracked } from "@glimmer/tracking";
 
 export default class SpreadsheetEditor extends Component {
   @tracked showEditReason = false;
+  @tracked loading = null;
   spreadsheet = null;
   defaultColWidth = 150;
-  @tracked loading = null;
 
   // Getters:
   get isEditingTable() {
