@@ -11,7 +11,7 @@ import { popupAjaxError } from "discourse/lib/ajax-error";
 import I18n from "I18n";
 import { schedule } from "@ember/runloop";
 import { tracked } from "@glimmer/tracking";
-
+import { localeMapping } from "../discourse-table-builder/lib/context-menu";
 export default class SpreadsheetEditor extends Component {
   @tracked showEditReason = false;
   @tracked loading = null;
@@ -189,6 +189,7 @@ export default class SpreadsheetEditor extends Component {
       defaultColAlign: "left",
       wordWrap: true,
       csvFileName: exportFileName,
+      text: localeMapping,
       ...opts,
     });
   }

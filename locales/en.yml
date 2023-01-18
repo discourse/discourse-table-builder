@@ -28,5 +28,37 @@ en:
       col_2: "Column 2"
       col_3: "Column 3"
       col_4: "Column 4"
+    spreadsheet:
+      no_records_found: "No records found"
+      showing_page: "Showing page {0} of {1} entries"
+      show: "Show"
+      entries: "entries"
+      about: "About"
+      prompts:
+        delete_selected_rows: "Are you sure to delete the selected rows?"
+        delete_selected_cols: "Are you sure to delete the selected columns?"
+        will_destroy_merged_cells: "This action will destroy any existing merged cells. Are you sure?"
+        will_clear_search_results: "This action will destroy any existing merged cells. Are you sure?"
+        conflicts_with_merged_cells: "There is a conflict with another merged cell"
+      invalid_merge_props: "Invalid merged properties"
+      cells_already_merged: "Cell already merged"
+      no_cells_selected: "No cells selected"
+      context_menu:
+        row:
+          before: "Insert a new row before"
+          after: "Insert a new row after"
+          delete: "Delete selected rows"
+        col:
+          before: "Insert a new column before"
+          after: "Insert a new column after"
+          delete: "Delete selected columns"
+          rename: "Rename this column"
+        order:
+          ascending: "Order ascending"
+          descending: "Order descending"
+        copy: "Copy..."
+        paste: "Paste..."
+        save: "Save as..."
+
   theme_metadata:
     description: "Adds a button to the composer to easily build tables in markdown"
