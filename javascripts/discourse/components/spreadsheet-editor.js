@@ -11,7 +11,7 @@ import { popupAjaxError } from "discourse/lib/ajax-error";
 import I18n from "I18n";
 import { schedule } from "@ember/runloop";
 import { tracked } from "@glimmer/tracking";
-import { localeMapping } from "../discourse-table-builder/lib/context-menu";
+import { localeMapping } from "../discourse-table-builder/lib/locale-mapping";
 export default class SpreadsheetEditor extends Component {
   @tracked showEditReason = false;
   @tracked loading = null;
