@@ -9,3 +9,6 @@ es:
     edit:
       modal:
         create: "Guardar"
+    spreadsheet:
+      show: "Mostrar"
+      about: "Acerca de"

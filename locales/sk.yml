@@ -9,3 +9,6 @@ sk:
     edit:
       modal:
         create: "Uložiť"
+    spreadsheet:
+      show: "Zobraziť"
+      about: "O stránke"

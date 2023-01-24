@@ -9,3 +9,6 @@ it:
     edit:
       modal:
         create: "Salva"
+    spreadsheet:
+      show: "Mostra"
+      about: "Informazioni su"

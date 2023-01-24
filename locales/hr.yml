@@ -9,3 +9,6 @@ hr:
     edit:
       modal:
         create: "Spremi"
+    spreadsheet:
+      show: "Pokaži"
+      about: "O nama"

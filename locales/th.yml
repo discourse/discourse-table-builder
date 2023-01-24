@@ -9,3 +9,6 @@ th:
     edit:
       modal:
         create: "บันทึก"
+    spreadsheet:
+      show: "แสดง"
+      about: "เกี่ยวกับ"

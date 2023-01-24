@@ -9,3 +9,6 @@ ur:
     edit:
       modal:
         create: "محفوظ کریں"
+    spreadsheet:
+      show: "دکھائیں"
+      about: "بارے میں"

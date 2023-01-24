@@ -9,3 +9,6 @@ et:
     edit:
       modal:
         create: "Salvesta"
+    spreadsheet:
+      show: "Näita"
+      about: "Teave"

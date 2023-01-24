@@ -9,3 +9,6 @@ ro:
     edit:
       modal:
         create: "Salvare"
+    spreadsheet:
+      show: "Arată"
+      about: "Despre"

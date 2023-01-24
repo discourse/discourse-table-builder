@@ -9,3 +9,6 @@ ko:
     edit:
       modal:
         create: "저장하기"
+    spreadsheet:
+      show: "보기"
+      about: "소개"

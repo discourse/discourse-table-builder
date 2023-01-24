@@ -9,3 +9,6 @@ lv:
     edit:
       modal:
         create: "Saglabāt"
+    spreadsheet:
+      show: "Parādīt"
+      about: "Par"

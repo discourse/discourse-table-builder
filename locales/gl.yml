@@ -9,3 +9,6 @@ gl:
     edit:
       modal:
         create: "Gardar"
+    spreadsheet:
+      show: "Amosar"
+      about: "Verbo de"

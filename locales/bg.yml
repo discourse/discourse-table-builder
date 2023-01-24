@@ -9,3 +9,6 @@ bg:
     edit:
       modal:
         create: "Запази "
+    spreadsheet:
+      show: "Покажи"
+      about: "Относно"

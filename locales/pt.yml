@@ -9,3 +9,6 @@ pt:
     edit:
       modal:
         create: "Guardar"
+    spreadsheet:
+      show: "Mostrar"
+      about: "Sobre"

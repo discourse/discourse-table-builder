@@ -9,3 +9,6 @@ el:
     edit:
       modal:
         create: "Αποθήκευση"
+    spreadsheet:
+      show: "Εμφάνιση"
+      about: "Σχετικά"

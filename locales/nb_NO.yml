@@ -9,3 +9,6 @@ nb_NO:
     edit:
       modal:
         create: "Lagre"
+    spreadsheet:
+      show: "Vis"
+      about: "Om"

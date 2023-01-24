@@ -9,3 +9,6 @@ ja:
     edit:
       modal:
         create: "保存"
+    spreadsheet:
+      show: "表示"
+      about: "紹介"

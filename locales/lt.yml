@@ -9,3 +9,6 @@ lt:
     edit:
       modal:
         create: "Išsaugoti"
+    spreadsheet:
+      show: "Rodyti"
+      about: "Apie"

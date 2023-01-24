@@ -9,3 +9,5 @@ be:
     edit:
       modal:
         create: "захаваць"
+    spreadsheet:
+      about: "Аб тэме"

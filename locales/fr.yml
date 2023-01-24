@@ -34,5 +34,8 @@ fr:
       col_2: "Colonne 2"
       col_3: "Colonne 3"
       col_4: "Colonne 4"
+    spreadsheet:
+      show: "Afficher"
+      about: "À propos"
   theme_metadata:
     description: "Ajouter un bouton à l'éditeur pour créer facilement des tableaux en Markdown"

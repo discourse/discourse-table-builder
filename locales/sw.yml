@@ -9,3 +9,6 @@ sw:
     edit:
       modal:
         create: "Hifadhi"
+    spreadsheet:
+      show: "Onyesha"
+      about: "Kuhusu"

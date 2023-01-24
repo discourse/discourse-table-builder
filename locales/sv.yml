@@ -9,3 +9,6 @@ sv:
     edit:
       modal:
         create: "Spara"
+    spreadsheet:
+      show: "Visa"
+      about: "Om"

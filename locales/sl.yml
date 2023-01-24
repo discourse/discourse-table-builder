@@ -9,3 +9,6 @@ sl:
     edit:
       modal:
         create: "Shrani"
+    spreadsheet:
+      show: "Prikaži"
+      about: "O nas"

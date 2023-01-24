@@ -9,3 +9,6 @@ da:
     edit:
       modal:
         create: "Gem"
+    spreadsheet:
+      show: "Vis"
+      about: "Om"

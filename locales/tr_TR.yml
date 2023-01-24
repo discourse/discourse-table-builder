@@ -9,3 +9,6 @@ tr_TR:
     edit:
       modal:
         create: "Kaydet"
+    spreadsheet:
+      show: "Göster"
+      about: "Hakkında"

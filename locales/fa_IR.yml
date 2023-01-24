@@ -9,3 +9,6 @@ fa_IR:
     edit:
       modal:
         create: "ذخیره کردن"
+    spreadsheet:
+      show: "نشان دادن"
+      about: "درباره"

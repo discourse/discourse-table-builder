@@ -9,3 +9,6 @@ ar:
     edit:
       modal:
         create: "حفظ"
+    spreadsheet:
+      show: "إظهار"
+      about: "نبذة"

@@ -9,3 +9,6 @@ hy:
     edit:
       modal:
         create: "Պահպանել"
+    spreadsheet:
+      show: "Ցուցադրել"
+      about: "Մասին"
