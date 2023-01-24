@@ -9,3 +9,6 @@ te:
     edit:
       modal:
         create: "భద్రపరుచు"
+    spreadsheet:
+      show: "చూపు"
+      about: "గురించి"

@@ -9,3 +9,6 @@ bs_BA:
     edit:
       modal:
         create: "Save"
+    spreadsheet:
+      show: "Show"
+      about: "O nama"

@@ -9,3 +9,6 @@ vi:
     edit:
       modal:
         create: "Lưu lại"
+    spreadsheet:
+      show: "Hiển thị"
+      about: "Giới thiệu"

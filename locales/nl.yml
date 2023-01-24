@@ -34,5 +34,8 @@ nl:
       col_2: "Kolom 2"
       col_3: "Kolom 3"
       col_4: "Kolom 4"
+    spreadsheet:
+      show: "Weergeven"
+      about: "Over"
   theme_metadata:
     description: "Voegt een knop toe aan de editor om eenvoudig tabellen te bouwen met markdown"

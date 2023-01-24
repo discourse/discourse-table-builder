@@ -9,3 +9,6 @@ uk:
     edit:
       modal:
         create: "Зберегти"
+    spreadsheet:
+      show: "Показати"
+      about: "Про"

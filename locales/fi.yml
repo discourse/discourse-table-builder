@@ -9,3 +9,6 @@ fi:
     edit:
       modal:
         create: "Tallenna"
+    spreadsheet:
+      show: "Näytä"
+      about: "Tietoja"

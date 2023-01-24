@@ -9,3 +9,6 @@ hu:
     edit:
       modal:
         create: "Mentés"
+    spreadsheet:
+      show: "Megjelenítés"
+      about: "Névjegy"

@@ -9,3 +9,6 @@ cs:
     edit:
       modal:
         create: "Uložit"
+    spreadsheet:
+      show: "Zobrazit"
+      about: "O fóru"

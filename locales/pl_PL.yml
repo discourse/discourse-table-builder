@@ -9,3 +9,6 @@ pl_PL:
     edit:
       modal:
         create: "Zapisz"
+    spreadsheet:
+      show: "Pokaż"
+      about: "O stronie"

@@ -9,3 +9,6 @@ ca:
     edit:
       modal:
         create: "Desa"
+    spreadsheet:
+      show: "Mostra"
+      about: "Quant a"

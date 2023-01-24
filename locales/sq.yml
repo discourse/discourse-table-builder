@@ -9,3 +9,6 @@ sq:
     edit:
       modal:
         create: "Ruaj"
+    spreadsheet:
+      show: "Shfaq"
+      about: "Rreth"

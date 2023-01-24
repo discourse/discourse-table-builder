@@ -9,3 +9,6 @@ sr:
     edit:
       modal:
         create: "Sačuvaj"
+    spreadsheet:
+      show: "Pokaži"
+      about: "O nama"

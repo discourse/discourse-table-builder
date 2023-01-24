@@ -9,3 +9,6 @@ id:
     edit:
       modal:
         create: "Simpan"
+    spreadsheet:
+      show: "Tunjukkan"
+      about: "Tentang"

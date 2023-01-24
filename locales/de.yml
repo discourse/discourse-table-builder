@@ -9,3 +9,6 @@ de:
     edit:
       modal:
         create: "Speichern"
+    spreadsheet:
+      show: "Anzeigen"
+      about: "Über"

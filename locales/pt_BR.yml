@@ -9,3 +9,6 @@ pt_BR:
     edit:
       modal:
         create: "Salvar"
+    spreadsheet:
+      show: "Exibir"
+      about: "Sobre"
