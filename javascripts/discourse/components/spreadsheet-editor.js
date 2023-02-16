@@ -5,6 +5,7 @@ import {
   findTableRegex,
   tokenRange,
 } from "../discourse-table-builder/lib/utilities";
+
 import Component from "@glimmer/component";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
@@ -12,6 +13,7 @@ import I18n from "I18n";
 import { schedule } from "@ember/runloop";
 import { tracked } from "@glimmer/tracking";
 import { localeMapping } from "../discourse-table-builder/lib/locale-mapping";
+
 export default class SpreadsheetEditor extends Component {
   @tracked showEditReason = false;
   @tracked loading = null;
@@ -244,10 +246,13 @@ export default class SpreadsheetEditor extends Component {
     data.forEach((row) => {
       const result = {};
 
-      headers.forEach((key, index) => (result[key] = row[index]));
+      headers.forEach((_key, index) => {
+        const columnKey = `col${index}`;
+        return (result[columnKey] = row[index]);
+      });
       table.push(result);
     });
 
-    return arrayToTable(table);
+    return arrayToTable(table, headers);
   }
 }
