@@ -33,13 +33,14 @@ export function arrayToTable(array, cols, colPrefix = "col") {
     table +=
       cols
         .map(function (_key, index) {
-          return String(item[`${colPrefix}${index}`] || "");
+          return String(item[`${colPrefix}${index}`] || "").replace(
+            /\r?\n|\r/g,
+            " "
+          );
         })
         .join(" | ") + "|\r\n";
   });
 
-  // Return table
-  console.log(table);
   return table;
 }
 
