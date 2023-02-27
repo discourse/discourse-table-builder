@@ -91,6 +91,25 @@ discourseModule("Unit | Utilities", function () {
     );
   });
 
+  test("arrayToTable returns valid table with multiline cell data", function (assert) {
+    const tableData = [
+      {
+        col0: "Jane\nDoe",
+        col1: "Teri",
+      },
+      {
+        col0: "Finch",
+        col1: "Sami",
+      },
+    ];
+
+    assert.strictEqual(
+      arrayToTable(tableData, ["Col 1", "Col 2"]),
+      `|Col 1 | Col 2|\r\n|--- | ---|\r\n|Jane Doe | Teri|\r\n|Finch | Sami|\r\n`,
+      "it creates a valid table"
+    );
+  });
+
   test("findTableRegex", function (assert) {
     const oneTable = `|Make|Model|Year|\r\n|--- | --- | ---|\r\n|Toyota|Supra|1998|`;
 
