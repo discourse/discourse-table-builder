@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 id:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Simpan"
+    spreadsheet:
+      show: "Tunjukkan"
+      about: "Tentang"

@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 sl:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Shrani"
+    spreadsheet:
+      show: "Prikaži"
+      about: "O nas"

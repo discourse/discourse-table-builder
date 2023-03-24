@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 ro:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Salvare"
+    spreadsheet:
+      show: "Arată"
+      about: "Despre"

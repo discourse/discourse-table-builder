@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 vi:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Lưu lại"
+    spreadsheet:
+      show: "Hiển thị"
+      about: "Giới thiệu"

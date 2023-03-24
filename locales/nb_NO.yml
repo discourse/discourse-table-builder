@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 nb_NO:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Lagre"
+    spreadsheet:
+      show: "Vis"
+      about: "Om"

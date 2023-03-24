@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 sq:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Ruaj"
+    spreadsheet:
+      show: "Shfaq"
+      about: "Rreth"

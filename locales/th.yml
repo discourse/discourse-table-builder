@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 th:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "บันทึก"
+    spreadsheet:
+      show: "แสดง"
+      about: "เกี่ยวกับ"

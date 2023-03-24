@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 sk:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Uložiť"
+    spreadsheet:
+      show: "Zobraziť"
+      about: "O stránke"

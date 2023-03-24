@@ -2,26 +2,23 @@
 
 /**
  * Generate markdown table from an array of objects
+ * Inspired by https://github.com/Ygilany/array-to-table
  *
- * @see {@link https://github.com/Ygilany/array-to-table|GitHub}:
- *
- * @param  {Array} array    Array of objects
- * @param  {String} columns  Optional, table column names, otherwise taken from the keys of the first object
+ * @param  {Array} array       Array of objects
+ * @param  {Array} columns     Column headings
+ * @param  {String} colPrefix  Table column prefix
  *
  * @return {String} Markdown table
  */
-export function arrayToTable(array, columns) {
+export function arrayToTable(array, cols, colPrefix = "col") {
   var table = "";
-
-  // Generate column list
-  var cols = columns ? columns.split(",") : Object.keys(array[0]);
 
   // Generate table headers
   table += "|";
   table += cols.join(" | ");
   table += "|\r\n|";
 
-  // Generate table header seperator
+  // Generate table header separator
   table += cols
     .map(function () {
       return "---";
@@ -32,24 +29,27 @@ export function arrayToTable(array, columns) {
   // Generate table body
   array.forEach(function (item) {
     table += "|";
+
     table +=
       cols
-        .map(function (key) {
-          return String(item[key] || "");
+        .map(function (_key, index) {
+          return String(item[`${colPrefix}${index}`] || "").replace(
+            /\r?\n|\r/g,
+            " "
+          );
         })
         .join(" | ") + "|\r\n";
   });
 
-  // Return table
   return table;
 }
 
 /**
  *
- * @returns a regular experssion finding all markdown tables
+ * @returns a regular expression finding all markdown tables
  */
 export function findTableRegex() {
-  return /((\r?){2}|^)([^\r\n]*\|[^\r\n]*(\r?\n)?)+(?=(\r?\n){2}|$)/gm;
+  return /((\r?){2}|^)(^\|[^\r\n]*(\r?\n)?)+(?=(\r?\n){2}|$)/gm;
 }
 
 export function tokenRange(tokens, start, end) {

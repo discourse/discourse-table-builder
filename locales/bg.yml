@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 bg:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Запази "
+    spreadsheet:
+      show: "Покажи"
+      about: "Относно"

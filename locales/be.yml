@@ -5,3 +5,9 @@
 # https://translate.discourse.org/
 
 be:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "захаваць"
+    spreadsheet:
+      about: "Аб тэме"

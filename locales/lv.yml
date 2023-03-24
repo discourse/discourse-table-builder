@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 lv:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Saglabāt"
+    spreadsheet:
+      show: "Parādīt"
+      about: "Par"

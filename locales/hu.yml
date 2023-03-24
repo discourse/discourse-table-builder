@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 hu:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Mentés"
+    spreadsheet:
+      show: "Megjelenítés"
+      about: "Névjegy"

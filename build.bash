@@ -7,10 +7,10 @@ JS_VENDOR=assets/vendor/
 JSUITES_JS_URL="https://jsuites.net/v4/jsuites.js"
 JSPREADSHEET_JS_URL="https://bossanova.uk/jspreadsheet/v4/jexcel.js"
 
-JSUITES_CSS_URL="https://raw.githubusercontent.com/jsuites/jsuites/master/dist/jsuites.basic.css"
+JSUITES_CSS_URL="https://raw.githubusercontent.com/jsuites/jsuites/master/dist/jsuites.css"
 JSPREADSHEET_CSS_URL="https://bossanova.uk/jspreadsheet/v4/jexcel.css"
 
-JSUITES_CSS_FILE=jsuites.basic.css
+JSUITES_CSS_FILE=jsuites.css
 JSUITES_SCSS_FILE=jsuites.scss
 JSUITES_SCSS_FILE_LOCATION=$SCSS_VENDOR$JSUITES_SCSS_FILE
 

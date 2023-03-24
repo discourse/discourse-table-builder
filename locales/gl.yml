@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 gl:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Gardar"
+    spreadsheet:
+      show: "Amosar"
+      about: "Verbo de"

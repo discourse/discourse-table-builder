@@ -18,13 +18,16 @@
 .mobile-view {
   .btn-edit-table {
     display: none;
+    z-index: 2;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
   }
 
   .fullscreen-table-wrapper {
-    border: 1px solid transparent;
+    position: relative;
 
     &:hover {
-      border: 1px solid var(--primary-low);
       table {
         opacity: 0.5;
       }

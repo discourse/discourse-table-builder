@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 zh_TW:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "保存"
+    spreadsheet:
+      show: "顯示"
+      about: "關於"

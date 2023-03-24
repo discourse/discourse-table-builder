@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 sr:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Sačuvaj"
+    spreadsheet:
+      show: "Pokaži"
+      about: "O nama"

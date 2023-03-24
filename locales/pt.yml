@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 pt:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Guardar"
+    spreadsheet:
+      show: "Mostrar"
+      about: "Sobre"

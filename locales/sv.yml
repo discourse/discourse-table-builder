@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 sv:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Spara"
+    spreadsheet:
+      show: "Visa"
+      about: "Om"

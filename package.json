@@ -9,6 +9,6 @@
     "build": "bash ./build.bash"
   },
   "devDependencies": {
-    "eslint-config-discourse": "latest"
+    "eslint-config-discourse": "^3.4.0"
   }
 }

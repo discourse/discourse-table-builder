@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 ca:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Desa"
+    spreadsheet:
+      show: "Mostra"
+      about: "Quant a"

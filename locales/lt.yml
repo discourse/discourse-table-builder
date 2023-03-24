@@ -5,3 +5,10 @@
 # https://translate.discourse.org/
 
 lt:
+  discourse_table_builder:
+    edit:
+      modal:
+        create: "Išsaugoti"
+    spreadsheet:
+      show: "Rodyti"
+      about: "Apie"
