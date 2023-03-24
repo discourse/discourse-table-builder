@@ -16,7 +16,7 @@ export default apiInitializer("0.11.1", (api) => {
       "open-popup-link",
       "btn-default",
       "btn",
-      "btn-icon-text",
+      "btn-icon",
       "btn-edit-table",
       "no-text"
     );
