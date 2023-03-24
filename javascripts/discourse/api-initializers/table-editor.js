@@ -16,16 +16,17 @@ export default apiInitializer("0.11.1", (api) => {
       "open-popup-link",
       "btn-default",
       "btn",
-      "btn-icon-text",
-      "btn-edit-table"
+      "btn-icon",
+      "btn-edit-table",
+      "no-text"
     );
     const editIcon = create(
       iconNode("pencil-alt", { class: "edit-table-icon" })
     );
-    const openPopupText = document.createTextNode(
-      I18n.t(themePrefix("discourse_table_builder.edit.btn_edit"))
+    openPopupBtn.title = I18n.t(
+      themePrefix("discourse_table_builder.edit.btn_edit")
     );
-    openPopupBtn.append(editIcon, openPopupText);
+    openPopupBtn.append(editIcon);
     return openPopupBtn;
   }
 
