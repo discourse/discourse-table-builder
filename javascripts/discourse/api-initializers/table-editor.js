@@ -62,12 +62,16 @@ export default apiInitializer("0.11.1", (api) => {
         const buttonWrapper = document.createElement("div");
         buttonWrapper.classList.add("fullscreen-table-wrapper--buttons");
         buttonWrapper.append(popupBtn);
-        popupBtn.addEventListener("click", generateModal, false);
         table.parentNode.insertBefore(buttonWrapper, table);
       }
 
       popupBtn.addEventListener("click", generateModal.bind(attrs), false);
     });
+  }
+
+  function cleanupPopupBtns() {
+    const popupBtns = document.querySelectorAll("button.open-popup-link");
+    popupBtns.forEach((btn) => btn.removeEventListener("click", generateModal));
   }
 
   api.decorateCookedElement(
@@ -88,4 +92,6 @@ export default apiInitializer("0.11.1", (api) => {
       id: "edit-table",
     }
   );
+
+  api.cleanupStream(cleanupPopupBtns);
 });
