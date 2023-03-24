@@ -60,7 +60,7 @@ export default apiInitializer("0.11.1", (api) => {
         expandBtn.parentNode.insertBefore(popupBtn, expandBtn);
       } else {
         const buttonWrapper = document.createElement("div");
-        buttonWrapper.classList.add("fullscreen-table-wrapper-buttons");
+        buttonWrapper.classList.add("fullscreen-table-wrapper--buttons");
         buttonWrapper.append(popupBtn);
         popupBtn.addEventListener("click", generateModal, false);
         table.parentNode.insertBefore(buttonWrapper, table);
