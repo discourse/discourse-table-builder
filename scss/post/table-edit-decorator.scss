@@ -31,8 +31,10 @@
       table {
         opacity: 0.5;
       }
+
       .btn-edit-table {
         display: block;
+        z-index: 2;
       }
     }
   }
