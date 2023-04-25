@@ -68,7 +68,7 @@ export default apiInitializer("0.11.1", (api) => {
 
       popupBtn.addEventListener(
         "click",
-        generateModal.bind(Object.assign({ tableIndex: index }, attrs)),
+        generateModal.bind({ tableIndex: index, ...attrs }),
         false
       );
     });
