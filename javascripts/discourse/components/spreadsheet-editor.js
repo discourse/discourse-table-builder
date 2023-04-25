@@ -19,16 +19,9 @@ export default class SpreadsheetEditor extends Component {
   @tracked loading = null;
   spreadsheet = null;
   defaultColWidth = 150;
+  isEditingTable = !!this.args.tableTokens;
 
   // Getters:
-  get isEditingTable() {
-    if (this.args.tableTokens) {
-      return true;
-    }
-
-    return false;
-  }
-
   get modalAttributes() {
     if (this.isEditingTable) {
       return {
@@ -196,12 +189,12 @@ export default class SpreadsheetEditor extends Component {
     });
   }
 
-  buildUpdatedPost(tableId, raw, newRaw) {
+  buildUpdatedPost(tableIndex, raw, newRaw) {
     const tableToEdit = raw.match(findTableRegex());
     let editedTable;
 
     if (tableToEdit.length) {
-      editedTable = raw.replace(tableToEdit[tableId], newRaw);
+      editedTable = raw.replace(tableToEdit[tableIndex], newRaw);
     } else {
       return raw;
     }
@@ -212,7 +205,7 @@ export default class SpreadsheetEditor extends Component {
   }
 
   updateTable(markdownTable) {
-    const tableId = this.args.tableId;
+    const tableIndex = this.args.tableIndex;
     const postId = this.args.model.id;
     const newRaw = markdownTable;
 
@@ -220,7 +213,7 @@ export default class SpreadsheetEditor extends Component {
       this.editReason ||
       I18n.t(themePrefix("discourse_table_builder.edit.default_edit_reason"));
     const raw = this.args.model.raw;
-    const newPostRaw = this.buildUpdatedPost(tableId, raw, newRaw);
+    const newPostRaw = this.buildUpdatedPost(tableIndex, raw, newRaw);
 
     return this.sendTableUpdate(postId, newPostRaw, editReason);
   }

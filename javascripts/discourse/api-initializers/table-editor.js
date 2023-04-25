@@ -30,19 +30,19 @@ export default apiInitializer("0.11.1", (api) => {
     return openPopupBtn;
   }
 
-  function generateModal(event) {
-    const tableId = event.target.getAttribute("data-table-id");
+  function generateModal() {
+    const tableIndex = this.tableIndex;
 
     return ajax(`/posts/${this.id}`, { type: "GET" })
       .then((post) =>
         parseAsync(post.raw).then((tokens) => {
           const allTables = tokenRange(tokens, "table_open", "table_close");
-          const tableTokens = allTables[tableId];
+          const tableTokens = allTables[tableIndex];
 
           showModal("insert-table-modal", {
             model: post,
           }).setProperties({
-            tableId,
+            tableIndex,
             tableTokens,
           });
         })
@@ -53,7 +53,7 @@ export default apiInitializer("0.11.1", (api) => {
   function generatePopups(tables, attrs) {
     tables.forEach((table, index) => {
       const popupBtn = createButton();
-      popupBtn.setAttribute("data-table-id", index); // sets a table id so each table can be distinctly edited
+      table.parentNode.setAttribute("data-table-index", index);
       table.parentNode.classList.add("fullscreen-table-wrapper");
       const expandBtn = table.parentNode.querySelector(".open-popup-link");
 
@@ -66,7 +66,11 @@ export default apiInitializer("0.11.1", (api) => {
         table.parentNode.insertBefore(buttonWrapper, table);
       }
 
-      popupBtn.addEventListener("click", generateModal.bind(attrs), false);
+      popupBtn.addEventListener(
+        "click",
+        generateModal.bind({ tableIndex: index, ...attrs }),
+        false
+      );
     });
   }
 
