@@ -6,9 +6,15 @@
 
 de:
   discourse_table_builder:
+    modal:
+      cancel: "Abbrechen"
+      help:
+        enter_key: "Enter"
     edit:
       modal:
+        cancel: "Abbrechen"
         create: "Speichern"
+        reason: "Welchen Grund gibt es für die Bearbeitung?"
     spreadsheet:
       show: "Anzeigen"
       about: "Über"

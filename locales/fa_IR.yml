@@ -6,9 +6,15 @@
 
 fa_IR:
   discourse_table_builder:
+    modal:
+      cancel: "لغو"
+      help:
+        enter_key: "وارد شدن "
     edit:
       modal:
+        cancel: "لغو"
         create: "ذخیره کردن"
+        reason: "چرا ویرایش می‌کنید؟"
     spreadsheet:
       show: "نشان دادن"
       about: "درباره"

@@ -6,9 +6,15 @@
 
 da:
   discourse_table_builder:
+    modal:
+      cancel: "annuller"
+      help:
+        enter_key: "Enter"
     edit:
       modal:
+        cancel: "annuller"
         create: "Gem"
+        reason: "hvorfor redigerer du?"
     spreadsheet:
       show: "Vis"
       about: "Om"

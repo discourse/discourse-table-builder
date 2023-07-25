@@ -6,9 +6,15 @@
 
 hy:
   discourse_table_builder:
+    modal:
+      cancel: "չեղարկել"
+      help:
+        enter_key: "Մուտք"
     edit:
       modal:
+        cancel: "չեղարկել"
         create: "Պահպանել"
+        reason: "Ո՞րն է խմբագրման պատճառը:"
     spreadsheet:
       show: "Ցուցադրել"
       about: "Մասին"

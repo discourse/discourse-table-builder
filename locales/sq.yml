@@ -6,9 +6,13 @@
 
 sq:
   discourse_table_builder:
+    modal:
+      cancel: "anulo"
     edit:
       modal:
+        cancel: "anulo"
         create: "Ruaj"
+        reason: "pse jeni duke e redaktuar?"
     spreadsheet:
       show: "Shfaq"
       about: "Rreth"

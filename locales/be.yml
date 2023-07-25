@@ -6,8 +6,12 @@
 
 be:
   discourse_table_builder:
+    modal:
+      cancel: "адмена"
     edit:
       modal:
+        cancel: "адмена"
         create: "захаваць"
+        reason: "чаму Вы рэдагуеце паведамленне?"
     spreadsheet:
       about: "Аб тэме"

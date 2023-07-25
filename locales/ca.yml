@@ -6,9 +6,15 @@
 
 ca:
   discourse_table_builder:
+    modal:
+      cancel: "cancel·la"
+      help:
+        enter_key: "Retorn"
     edit:
       modal:
+        cancel: "cancel·la"
         create: "Desa"
+        reason: "per què ho editeu?"
     spreadsheet:
       show: "Mostra"
       about: "Quant a"

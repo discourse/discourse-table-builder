@@ -6,9 +6,15 @@
 
 hu:
   discourse_table_builder:
+    modal:
+      cancel: "mégse"
+      help:
+        enter_key: "Enter"
     edit:
       modal:
+        cancel: "mégse"
         create: "Mentés"
+        reason: "miért szerkeszt?"
     spreadsheet:
       show: "Megjelenítés"
       about: "Névjegy"

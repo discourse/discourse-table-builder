@@ -6,9 +6,15 @@
 
 vi:
   discourse_table_builder:
+    modal:
+      cancel: "hủy"
+      help:
+        enter_key: "Nhập"
     edit:
       modal:
+        cancel: "hủy"
         create: "Lưu lại"
+        reason: "Tại sao bạn sửa"
     spreadsheet:
       show: "Hiển thị"
       about: "Giới thiệu"

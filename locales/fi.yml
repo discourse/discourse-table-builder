@@ -6,9 +6,15 @@
 
 fi:
   discourse_table_builder:
+    modal:
+      cancel: "peruuta"
+      help:
+        enter_key: "Enter"
     edit:
       modal:
+        cancel: "peruuta"
         create: "Tallenna"
+        reason: "miksi muokkaat viestiä?"
     spreadsheet:
       show: "Näytä"
       about: "Tietoja"

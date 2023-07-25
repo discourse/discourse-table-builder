@@ -6,9 +6,15 @@
 
 tr_TR:
   discourse_table_builder:
+    modal:
+      cancel: "iptal et"
+      help:
+        enter_key: "Enter"
     edit:
       modal:
+        cancel: "iptal et"
         create: "Kaydet"
+        reason: "neden düzenleme yapıyorsunuz?"
     spreadsheet:
       show: "Göster"
       about: "Hakkında"

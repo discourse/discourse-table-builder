@@ -6,9 +6,15 @@
 
 ar:
   discourse_table_builder:
+    modal:
+      cancel: "إلغاء"
+      help:
+        enter_key: "Enter"
     edit:
       modal:
+        cancel: "إلغاء"
         create: "حفظ"
+        reason: "ما سبب التعديل؟"
     spreadsheet:
       show: "إظهار"
       about: "نبذة"

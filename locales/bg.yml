@@ -6,9 +6,15 @@
 
 bg:
   discourse_table_builder:
+    modal:
+      cancel: "прекрати"
+      help:
+        enter_key: "Въведете"
     edit:
       modal:
+        cancel: "прекрати"
         create: "Запази "
+        reason: "защо редактирате ?"
     spreadsheet:
       show: "Покажи"
       about: "Относно"

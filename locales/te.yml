@@ -6,9 +6,13 @@
 
 te:
   discourse_table_builder:
+    modal:
+      cancel: "రద్దు"
     edit:
       modal:
+        cancel: "రద్దు"
         create: "భద్రపరుచు"
+        reason: "మీరెందుకు సవరిస్తున్నారు?"
     spreadsheet:
       show: "చూపు"
       about: "గురించి"

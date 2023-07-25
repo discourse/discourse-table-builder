@@ -6,9 +6,13 @@
 
 cs:
   discourse_table_builder:
+    modal:
+      cancel: "zrušit"
     edit:
       modal:
+        cancel: "zrušit"
         create: "Uložit"
+        reason: "proč byla nutná úprava?"
     spreadsheet:
       show: "Zobrazit"
       about: "O fóru"

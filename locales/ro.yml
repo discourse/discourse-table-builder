@@ -6,9 +6,13 @@
 
 ro:
   discourse_table_builder:
+    modal:
+      cancel: "Anulează"
     edit:
       modal:
+        cancel: "Anulează"
         create: "Salvare"
+        reason: "de ce editezi?"
     spreadsheet:
       show: "Arată"
       about: "Despre"

@@ -6,9 +6,13 @@
 
 sr:
   discourse_table_builder:
+    modal:
+      cancel: "otkaži"
     edit:
       modal:
+        cancel: "otkaži"
         create: "Sačuvaj"
+        reason: "zašto izmenjujete?"
     spreadsheet:
       show: "Pokaži"
       about: "O nama"

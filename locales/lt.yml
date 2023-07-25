@@ -6,9 +6,15 @@
 
 lt:
   discourse_table_builder:
+    modal:
+      cancel: "atšaukti"
+      help:
+        enter_key: "Įeiti"
     edit:
       modal:
+        cancel: "atšaukti"
         create: "Išsaugoti"
+        reason: "kodėl jūs redaguojate?"
     spreadsheet:
       show: "Rodyti"
       about: "Apie"

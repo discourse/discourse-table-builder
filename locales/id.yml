@@ -6,9 +6,15 @@
 
 id:
   discourse_table_builder:
+    modal:
+      cancel: "batal"
+      help:
+        enter_key: "Enter"
     edit:
       modal:
+        cancel: "batal"
         create: "Simpan"
+        reason: "mengapa Anda menyunting?"
     spreadsheet:
       show: "Tunjukkan"
       about: "Tentang"

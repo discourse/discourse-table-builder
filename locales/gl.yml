@@ -6,9 +6,15 @@
 
 gl:
   discourse_table_builder:
+    modal:
+      cancel: "cancelar"
+      help:
+        enter_key: "Intro"
     edit:
       modal:
+        cancel: "cancelar"
         create: "Gardar"
+        reason: "por que o está editando?"
     spreadsheet:
       show: "Amosar"
       about: "Verbo de"
