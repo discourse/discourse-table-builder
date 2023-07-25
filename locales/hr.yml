@@ -6,9 +6,15 @@
 
 hr:
   discourse_table_builder:
+    modal:
+      cancel: "otkaži"
+      help:
+        enter_key: "Unesi"
     edit:
       modal:
+        cancel: "otkaži"
         create: "Spremi"
+        reason: "zašto izmjenjujete?"
     spreadsheet:
       show: "Pokaži"
       about: "O nama"

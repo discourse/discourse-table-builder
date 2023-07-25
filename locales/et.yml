@@ -6,9 +6,13 @@
 
 et:
   discourse_table_builder:
+    modal:
+      cancel: "tühista"
     edit:
       modal:
+        cancel: "tühista"
         create: "Salvesta"
+        reason: "miks sa seda muudad?"
     spreadsheet:
       show: "Näita"
       about: "Teave"

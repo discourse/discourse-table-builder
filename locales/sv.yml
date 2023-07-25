@@ -6,9 +6,15 @@
 
 sv:
   discourse_table_builder:
+    modal:
+      cancel: "avbryt"
+      help:
+        enter_key: "Retur"
     edit:
       modal:
+        cancel: "avbryt"
         create: "Spara"
+        reason: "varför redigerar du?"
     spreadsheet:
       show: "Visa"
       about: "Om"

@@ -6,9 +6,13 @@
 
 zh_TW:
   discourse_table_builder:
+    modal:
+      cancel: "取消"
     edit:
       modal:
+        cancel: "取消"
         create: "保存"
+        reason: "你為什麼做編輯?"
     spreadsheet:
       show: "顯示"
       about: "關於"

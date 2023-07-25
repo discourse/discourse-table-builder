@@ -6,9 +6,15 @@
 
 el:
   discourse_table_builder:
+    modal:
+      cancel: "ακύρωση"
+      help:
+        enter_key: "Enter"
     edit:
       modal:
+        cancel: "ακύρωση"
         create: "Αποθήκευση"
+        reason: "γιατί αναθεωρείς;"
     spreadsheet:
       show: "Εμφάνιση"
       about: "Σχετικά"

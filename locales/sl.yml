@@ -6,9 +6,15 @@
 
 sl:
   discourse_table_builder:
+    modal:
+      cancel: "prekliči"
+      help:
+        enter_key: "Enter"
     edit:
       modal:
+        cancel: "prekliči"
         create: "Shrani"
+        reason: "zakaj spreminjate prispevek?"
     spreadsheet:
       show: "Prikaži"
       about: "O nas"

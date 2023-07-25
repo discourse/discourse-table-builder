@@ -6,9 +6,15 @@
 
 ur:
   discourse_table_builder:
+    modal:
+      cancel: "منسوخ"
+      help:
+        enter_key: "اَینٹر"
     edit:
       modal:
+        cancel: "منسوخ"
         create: "محفوظ کریں"
+        reason: "آپ ترمیم کیوں کر رہے ہیں؟"
     spreadsheet:
       show: "دکھائیں"
       about: "بارے میں"

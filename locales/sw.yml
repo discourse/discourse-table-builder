@@ -6,9 +6,13 @@
 
 sw:
   discourse_table_builder:
+    modal:
+      cancel: "ghairi"
     edit:
       modal:
+        cancel: "ghairi"
         create: "Hifadhi"
+        reason: "kwa nini unahariri?"
     spreadsheet:
       show: "Onyesha"
       about: "Kuhusu"

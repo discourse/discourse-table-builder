@@ -6,9 +6,15 @@
 
 ja:
   discourse_table_builder:
+    modal:
+      cancel: "キャンセル"
+      help:
+        enter_key: "Enter"
     edit:
       modal:
+        cancel: "キャンセル"
         create: "保存"
+        reason: "編集する理由は？"
     spreadsheet:
       show: "表示"
       about: "紹介"

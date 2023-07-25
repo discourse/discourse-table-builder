@@ -6,9 +6,15 @@
 
 uk:
   discourse_table_builder:
+    modal:
+      cancel: "скасувати"
+      help:
+        enter_key: "Enter"
     edit:
       modal:
+        cancel: "скасувати"
         create: "Зберегти"
+        reason: "чому ви редагуєте допис?"
     spreadsheet:
       show: "Показати"
       about: "Про"

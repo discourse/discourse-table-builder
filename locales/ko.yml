@@ -6,9 +6,15 @@
 
 ko:
   discourse_table_builder:
+    modal:
+      cancel: "취소"
+      help:
+        enter_key: "시작하다"
     edit:
       modal:
+        cancel: "취소"
         create: "저장하기"
+        reason: "왜 편집 중입니까?"
     spreadsheet:
       show: "보기"
       about: "소개"

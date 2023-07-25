@@ -6,9 +6,15 @@
 
 th:
   discourse_table_builder:
+    modal:
+      cancel: "ยกเลิก"
+      help:
+        enter_key: "เอ็นเทอร์"
     edit:
       modal:
+        cancel: "ยกเลิก"
         create: "บันทึก"
+        reason: "ทำไมคุณถึงแก้ไข"
     spreadsheet:
       show: "แสดง"
       about: "เกี่ยวกับ"
