@@ -7,7 +7,7 @@ import { create } from "virtual-dom";
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
 import { parseAsync } from "discourse/lib/text";
-import { tokenRange } from "../discourse-table-builder/lib/utilities";
+import { tokenRange } from "../../discourse-table-builder/lib/utilities";
 
 export default apiInitializer("0.11.1", (api) => {
   function createButton() {
