@@ -4,7 +4,7 @@ import {
   arrayToTable,
   findTableRegex,
   tokenRange,
-} from "../discourse-table-builder/lib/utilities";
+} from "../../discourse-table-builder/lib/utilities";
 
 import Component from "@glimmer/component";
 import { ajax } from "discourse/lib/ajax";
@@ -12,7 +12,7 @@ import { popupAjaxError } from "discourse/lib/ajax-error";
 import I18n from "I18n";
 import { schedule } from "@ember/runloop";
 import { tracked } from "@glimmer/tracking";
-import { localeMapping } from "../discourse-table-builder/lib/locale-mapping";
+import { localeMapping } from "../../discourse-table-builder/lib/locale-mapping";
 
 export default class SpreadsheetEditor extends Component {
   @tracked showEditReason = false;
