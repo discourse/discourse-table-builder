@@ -5,6 +5,7 @@ const themeId = themePrefix("foo").match(/theme_translations\.(\d+)\.foo/)[1];
 const base = `discourse/theme-${themeId}`;
 
 if (!require.entries[`${base}/discourse/components/spreadsheet-editor`]) {
+  // eslint-disable-next-line no-console
   console.warn(
     "Running on an old version of core. discourse-table-builder is shimming modules to keep old imports working."
   );
