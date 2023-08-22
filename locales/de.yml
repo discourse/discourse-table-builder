@@ -6,15 +6,45 @@
 
 de:
   discourse_table_builder:
+    title: "Tabellenersteller"
+    composer:
+      button: "Tabelle einfügen"
     modal:
+      title: "Tabellenersteller"
+      create: "Tabelle erstellen"
       cancel: "Abbrechen"
       help:
+        title: "Verwendung des Tabellenkalkulationseditors"
         enter_key: "Enter"
+        tab_key: "Tabulatur"
+        new_row: "am Ende einer Zeile, um eine neue Zeile einzufügen."
+        new_col: "am Ende einer Spalte, um eine neue Spalte einzufügen."
+        options: "Klicke mit der rechten Maustaste auf eine Zelle, um weitere Optionen in einem Drop-down-Menü aufzurufen."
     edit:
+      btn_edit: "Tabelle bearbeiten"
       modal:
+        title: "Tabelle bearbeiten"
         cancel: "Abbrechen"
         create: "Speichern"
         reason: "Welchen Grund gibt es für die Bearbeitung?"
+        trigger_reason: "Grund für die Bearbeitung hinzufügen"
+      default_edit_reason: "Tabelle per Tabelleneditor aktualisieren"
+    default_header:
+      col_1: "Spalte 1"
+      col_2: "Spalte 2"
+      col_3: "Spalte 3"
+      col_4: "Spalte 4"
     spreadsheet:
+      no_records_found: "Keine Datensätze gefunden"
+      showing_page: "Seite {0} von {1} Einträgen wird angezeigt"
       show: "Anzeigen"
+      entries: "Einträge"
       about: "Über"
+      prompts:
+        delete_selected_rows: "Bist du sicher, dass du die ausgewählten Zeilen löschen willst?"
+        delete_selected_cols: "Bist du sicher, dass du die ausgewählten Spalten löschen willst?"
+        will_destroy_merged_cells: "Durch diese Aktion werden alle vorhandenen zusammengeführten Zellen zerstört. Bist du sicher?"
+        will_clear_search_results: "Durch diese Aktion werden alle vorhandenen zusammengeführten Zellen zerstört. Bist du sicher?"
+        conflicts_with_merged_cells: "Es liegt ein Konflikt mit einer anderen zusammengeführten Zelle vor"
+      invalid_merge_props: "Ungültige zusammengeführte Eigenschaften"
+      cells_already_merged: "Zelle bereits zusammengeführt"
