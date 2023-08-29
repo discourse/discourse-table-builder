@@ -6,15 +6,64 @@
 
 pt_BR:
   discourse_table_builder:
+    title: "Compilador de tabela"
+    composer:
+      button: "Inserir tabela"
     modal:
+      title: "Compilador de tabela"
+      create: "Compilar tabela"
       cancel: "cancelar"
       help:
+        title: "Usando editor de planilha"
         enter_key: "Enter"
+        tab_key: "Aba"
+        new_row: "no fim da linha para inserir uma nova linha."
+        new_col: "no fim da coluna para inserir uma nova coluna."
+        options: "Clique com o botão direito nas células para acessar mais opções no menu suspenso."
     edit:
+      btn_edit: "Editar tabela"
       modal:
+        title: "Editar tabela"
         cancel: "cancelar"
         create: "Salvar"
         reason: "por que você está editando?"
+        trigger_reason: "Adicionar motivo para edição"
+      default_edit_reason: "Atualizar tabela com o editor de tabela"
+    default_header:
+      col_1: "Coluna 1"
+      col_2: "Coluna 2"
+      col_3: "Coluna 3"
+      col_4: "Coluna 4"
     spreadsheet:
+      no_records_found: "Nenhum registro encontrado"
+      showing_page: "Mostrando página {0} de {1} entradas"
       show: "Exibir"
+      entries: "entradas"
       about: "Sobre"
+      prompts:
+        delete_selected_rows: "Tem certeza de que deseja excluir as linhas selecionadas?"
+        delete_selected_cols: "Tem certeza de que deseja excluir as colunas selecionadas?"
+        will_destroy_merged_cells: "Esta ação irá desfazer as células mescladas existentes. Tem certeza?"
+        will_clear_search_results: "Esta ação irá desfazer as células mescladas existentes. Tem certeza?"
+        conflicts_with_merged_cells: "Há um conflito com outra célula mesclada"
+      invalid_merge_props: "Propriedades mescladas inválidas"
+      cells_already_merged: "Células já mescladas"
+      no_cells_selected: "Nenhuma célula selecionada"
+      context_menu:
+        row:
+          before: "Inserir nova linha antes"
+          after: "Inserir nova linha depois"
+          delete: "Excluir linhas selecionadas"
+        col:
+          before: "Inserir nova coluna antes"
+          after: "Inserir nova coluna depois"
+          delete: "Excluir colunas selecionadas"
+          rename: "Renomear esta coluna"
+        order:
+          ascending: "Ordem crescente"
+          descending: "Ordem decrescente"
+        copy: "Copiar..."
+        paste: "Colar..."
+        save: "Salvar como..."
+  theme_metadata:
+    description: "Adiciona um botão ao compositor para construir tabelas facilmente no Markdown"
