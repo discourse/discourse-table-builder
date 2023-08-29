@@ -48,3 +48,22 @@ de:
         conflicts_with_merged_cells: "Es liegt ein Konflikt mit einer anderen zusammengeführten Zelle vor"
       invalid_merge_props: "Ungültige zusammengeführte Eigenschaften"
       cells_already_merged: "Zelle bereits zusammengeführt"
+      no_cells_selected: "Keine Zellen ausgewählt"
+      context_menu:
+        row:
+          before: "Davor neue Zeile einfügen"
+          after: "Danach neue Zeile einfügen"
+          delete: "Ausgewählte Zeilen löschen"
+        col:
+          before: "Davor neue Spalte einfügen"
+          after: "Danach neue Spalte einfügen"
+          delete: "Ausgewählte Spalten löschen"
+          rename: "Diese Spalte umbenennen"
+        order:
+          ascending: "Reihenfolge aufsteigend"
+          descending: "Reihenfolge absteigend"
+        copy: "Kopieren …"
+        paste: "Einfügen …"
+        save: "Speichern als …"
+  theme_metadata:
+    description: "Fügt dem Editor eine Schaltfläche hinzu, um einfach Tabellen in Markdown zu erstellen"

@@ -14,7 +14,7 @@ nl:
       create: "Tabel bouwen"
       cancel: "annuleren"
       help:
-        title: "Spreadsheeteditor wordt gebruikt"
+        title: "Gebruik van de spreadsheeteditor"
         enter_key: "Enter"
         tab_key: "Tab"
         new_row: "aan het einde van een rij om een nieuwe rij in te voegen."
@@ -28,14 +28,42 @@ nl:
         create: "Opslaan"
         reason: "waarom bewerk je?"
         trigger_reason: "Reden voor bewerking toevoegen"
-      default_edit_reason: "Tabel bijwerken met Tabeleditor"
+      default_edit_reason: "Tabel bijwerken met tabeleditor"
     default_header:
       col_1: "Kolom 1"
       col_2: "Kolom 2"
       col_3: "Kolom 3"
       col_4: "Kolom 4"
     spreadsheet:
+      no_records_found: "Geen records gevonden"
+      showing_page: "Pagina {0} van {1} wordt weergegeven"
       show: "Weergeven"
+      entries: "vermeldingen"
       about: "Over"
+      prompts:
+        delete_selected_rows: "Weet je zeker dat je de geselecteerde rijen wilt verwijderen?"
+        delete_selected_cols: "Weet je zeker dat je de geselecteerde kolommen wilt verwijderen?"
+        will_destroy_merged_cells: "Hierdoor worden alle bestaande samengevoegde cellen vernietigd. Weet je het zeker?"
+        will_clear_search_results: "Hierdoor worden alle bestaande samengevoegde cellen vernietigd. Weet je het zeker?"
+        conflicts_with_merged_cells: "Er is een conflict met een andere samengevoegde cel"
+      invalid_merge_props: "Ongeldige samengevoegde eigenschappen"
+      cells_already_merged: "Cel is al samengevoegd"
+      no_cells_selected: "Geen cellen geselecteerd"
+      context_menu:
+        row:
+          before: "Nieuwe rij invoegen voor"
+          after: "Nieuwe rij invoegen na"
+          delete: "Geselecteerde rijen verwijderen"
+        col:
+          before: "Nieuwe kolom invoegen voor"
+          after: "Nieuwe kolom invoegen na"
+          delete: "Geselecteerde kolommen verwijderen"
+          rename: "Deze kolom hernoemen"
+        order:
+          ascending: "Oplopend sorteren"
+          descending: "Aflopend sorteren"
+        copy: "Kopiëren..."
+        paste: "Plakken..."
+        save: "Opslaan als..."
   theme_metadata:
     description: "Voegt een knop toe aan de editor om eenvoudig tabellen te bouwen met markdown"

@@ -6,15 +6,64 @@
 
 ja:
   discourse_table_builder:
+    title: "テーブル作成ツール"
+    composer:
+      button: "テーブルを挿入"
     modal:
+      title: "テーブル作成ツール"
+      create: "テーブルを作成"
       cancel: "キャンセル"
       help:
+        title: "表計算シート作成ツールの使用"
         enter_key: "Enter"
+        tab_key: "タブ"
+        new_row: "を行の末尾に使用して、新しい行を挿入します。"
+        new_col: "を列の末尾に使用して、新しい列を挿入します。"
+        options: "セルを右クリックすると、ドロップダウンメニューのその他のオプションにアクセスできます。"
     edit:
+      btn_edit: "テーブルを編集"
       modal:
+        title: "テーブルの編集"
         cancel: "キャンセル"
         create: "保存"
         reason: "編集する理由は？"
+        trigger_reason: "編集理由を追加してください"
+      default_edit_reason: "テーブル作成ツールでテーブルを更新"
+    default_header:
+      col_1: "列 1"
+      col_2: "列 2"
+      col_3: "列 3"
+      col_4: "列 4"
     spreadsheet:
+      no_records_found: "レコードが見つかりません"
+      showing_page: "{1} エントリーの {0} ページ目を表示中"
       show: "表示"
-      about: "紹介"
+      entries: "エントリー"
+      about: "情報"
+      prompts:
+        delete_selected_rows: "選択された行を削除してもよろしいですか？"
+        delete_selected_cols: "選択された列を削除してもよろしいですか？"
+        will_destroy_merged_cells: "この操作によって結合された既存の説がすべて破棄されます。よろしいですか？"
+        will_clear_search_results: "この操作によって結合された既存のセルがすべて破棄されます。よろしいですか？"
+        conflicts_with_merged_cells: "他の結合セルと競合しています"
+      invalid_merge_props: "結合されたプロパティが無効です"
+      cells_already_merged: "セルはすでに結合済みです"
+      no_cells_selected: "セルが選択されていません"
+      context_menu:
+        row:
+          before: "前に新しい行を挿入"
+          after: "後に新しい行を挿入"
+          delete: "選択行を削除"
+        col:
+          before: "前に新しい列を挿入"
+          after: "後に新しい列を挿入"
+          delete: "選択列を削除"
+          rename: "この列の名前を変更"
+        order:
+          ascending: "昇順で並べ替え"
+          descending: "降順で並べ替え"
+        copy: "コピー..."
+        paste: "貼り付け..."
+        save: "名前を付けて保存..."
+  theme_metadata:
+    description: "マークダウンで簡単にテーブルを作成するためのボタンを作成ツールに追加します"

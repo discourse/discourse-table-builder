@@ -15,8 +15,8 @@ fr:
       cancel: "annuler"
       help:
         title: "Utiliser l'éditeur de tableaux"
-        enter_key: "Utiliser le tableur"
-        tab_key: "Tab"
+        enter_key: "Entrée"
+        tab_key: "Tabulation"
         new_row: "à la fin d'une ligne pour en insérer une nouvelle."
         new_col: "à la fin d'une colonne pour en insérer une nouvelle."
         options: "Clic droit sur une cellule pour afficher des options contextuelles."
@@ -28,14 +28,42 @@ fr:
         create: "Enregistrer"
         reason: "pourquoi modifiez-vous le tableau ?"
         trigger_reason: "Ajouter la raison de la modification"
-      default_edit_reason: "Modifier avec l'éditeur de tableau"
+      default_edit_reason: "Modifier avec l'éditeur de tableaux"
     default_header:
       col_1: "Colonne 1"
       col_2: "Colonne 2"
       col_3: "Colonne 3"
       col_4: "Colonne 4"
     spreadsheet:
+      no_records_found: "Aucun enregistrement trouvé"
+      showing_page: "Affichage de la page {0} sur {1} entrées"
       show: "Afficher"
+      entries: "entrées"
       about: "À propos"
+      prompts:
+        delete_selected_rows: "Voulez-vous vraiment supprimer les lignes sélectionnées ?"
+        delete_selected_cols: "Voulez-vous vraiment supprimer les colonnes sélectionnées ?"
+        will_destroy_merged_cells: "Cette action détruira toutes les cellules fusionnées existantes. Voulez-vous continuer ?"
+        will_clear_search_results: "Cette action détruira toutes les cellules fusionnées existantes. Voulez-vous continuer ?"
+        conflicts_with_merged_cells: "Il y a un conflit avec une autre cellule fusionnée"
+      invalid_merge_props: "Propriétés fusionnées invalides"
+      cells_already_merged: "Cellule déjà fusionnée"
+      no_cells_selected: "Aucune cellule sélectionnée"
+      context_menu:
+        row:
+          before: "Insérer une nouvelle ligne avant"
+          after: "Insérer une nouvelle ligne après"
+          delete: "Supprimer les lignes sélectionnées"
+        col:
+          before: "Insérer une nouvelle colonne avant"
+          after: "Insérer une nouvelle colonne après"
+          delete: "Supprimer les colonnes sélectionnées"
+          rename: "Renommer cette colonne"
+        order:
+          ascending: "Ordre croissant"
+          descending: "Ordre décroissant"
+        copy: "Copier..."
+        paste: "Coller..."
+        save: "Enregistrer sous..."
   theme_metadata:
     description: "Ajouter un bouton à l'éditeur pour créer facilement des tableaux en Markdown"

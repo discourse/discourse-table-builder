@@ -6,31 +6,64 @@
 
 zh_CN:
   discourse_table_builder:
-    title: "表格编辑器"
+    title: "表生成器"
     composer:
-      button: "插入表格"
+      button: "插入表"
     modal:
-      title: "表格编辑器"
-      create: "创建表格"
+      title: "表生成器"
+      create: "创建表"
       cancel: "取消"
       help:
-        title: "使用方法"
+        title: "使用电子表格编辑器"
         enter_key: "Enter"
         tab_key: "Tab"
         new_row: "插入行"
         new_col: "插入列"
-        options: "右键单击单元格查看更多选项"
+        options: "右键点击单元格可访问下拉菜单中的更多选项。"
     edit:
-      btn_edit: "编辑表格"
+      btn_edit: "编辑表"
       modal:
-        title: "编辑表格"
+        title: "编辑表"
         cancel: "取消"
         create: "保存"
         reason: "为何进行这次编辑？"
-        trigger_reason: "附注编辑原因"
-      default_edit_reason: "编辑原因"
+        trigger_reason: "添加编辑原因"
+      default_edit_reason: "使用表编辑器更新表"
+    default_header:
+      col_1: "第 1 列"
+      col_2: "第 2 列"
+      col_3: "第 3 列"
+      col_4: "第 4 列"
     spreadsheet:
+      no_records_found: "找不到记录"
+      showing_page: "显示第 {0} 页，共 {1} 个条目"
       show: "显示"
+      entries: "个条目"
       about: "关于"
+      prompts:
+        delete_selected_rows: "确定要删除所选行吗？"
+        delete_selected_cols: "确定要删除所选列吗？"
+        will_destroy_merged_cells: "此操作将破坏任何现有的合并单元格。确定吗？"
+        will_clear_search_results: "此操作将破坏任何现有的合并单元格。确定吗？"
+        conflicts_with_merged_cells: "与另一合并单元格存在冲突"
+      invalid_merge_props: "合并属性无效"
+      cells_already_merged: "单元格已合并"
+      no_cells_selected: "未选择单元格"
+      context_menu:
+        row:
+          before: "在前面插入新行"
+          after: "在后面插入新行"
+          delete: "删除所选行"
+        col:
+          before: "在前面插入新列"
+          after: "在后面插入新列"
+          delete: "删除所选列"
+          rename: "重命名此列"
+        order:
+          ascending: "按升序排序"
+          descending: "按降序排序"
+        copy: "复制…"
+        paste: "粘贴…"
+        save: "另存为…"
   theme_metadata:
-    description: "给编辑器添加一个按钮，用 markdown 轻松创建表格"
+    description: "向编辑器添加一个按钮，以便在 Markdown 中轻松构建表"
