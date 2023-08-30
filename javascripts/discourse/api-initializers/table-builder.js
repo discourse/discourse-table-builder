@@ -1,16 +1,20 @@
 import { apiInitializer } from "discourse/lib/api";
+import SpreadsheetEditor from "../components/spreadsheet-editor";
 import { action } from "@ember/object";
-import showModal from "discourse/lib/show-modal";
+import { inject as service } from "@ember/service";
 
 export default apiInitializer("0.11.1", (api) => {
   api.modifyClass("controller:composer", {
     pluginId: "discourse-table-builder",
+    modal: service(),
 
     @action
     showTableBuilder() {
-      showModal("insert-table-modal").setProperties({
-        toolbarEvent: this.toolbarEvent,
-        tableTokens: null,
+      this.modal.show(SpreadsheetEditor, {
+        model: {
+          toolbarEvent: this.toolbarEvent,
+          tableTokens: null,
+        },
       });
     },
   });

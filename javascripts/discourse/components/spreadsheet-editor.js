@@ -19,7 +19,7 @@ export default class SpreadsheetEditor extends Component {
   @tracked loading = null;
   spreadsheet = null;
   defaultColWidth = 150;
-  isEditingTable = !!this.args.tableTokens;
+  isEditingTable = !!this.args.model.tableTokens;
 
   // Getters:
   get modalAttributes() {
@@ -50,7 +50,7 @@ export default class SpreadsheetEditor extends Component {
     schedule("afterRender", () => {
       this.loadLibraries().then(() => {
         if (this.isEditingTable) {
-          this.buildPopulatedTable(this.args.tableTokens);
+          this.buildPopulatedTable(this.args.model.tableTokens);
         } else {
           this.buildNewTable();
         }
@@ -68,19 +68,14 @@ export default class SpreadsheetEditor extends Component {
   }
 
   @action
-  cancelTableInsertion() {
-    this.args.triggerModalClose();
-  }
-
-  @action
   insertTable() {
     const updatedHeaders = this.spreadsheet.getHeaders().split(","); // keys
     const updatedData = this.spreadsheet.getData(); // values
     const markdownTable = this.buildTableMarkdown(updatedHeaders, updatedData);
 
     if (!this.isEditingTable) {
-      this.args.toolbarEvent.addText(markdownTable);
-      return this.args.triggerModalClose();
+      this.args.model.toolbarEvent.addText(markdownTable);
+      return this.args.closeModal();
     } else {
       return this.updateTable(markdownTable);
     }
@@ -205,14 +200,14 @@ export default class SpreadsheetEditor extends Component {
   }
 
   updateTable(markdownTable) {
-    const tableIndex = this.args.tableIndex;
-    const postId = this.args.model.id;
+    const tableIndex = this.args.model.tableIndex;
+    const postId = this.args.model.post.id;
     const newRaw = markdownTable;
 
     const editReason =
       this.editReason ||
       I18n.t(themePrefix("discourse_table_builder.edit.default_edit_reason"));
-    const raw = this.args.model.raw;
+    const raw = this.args.model.post.raw;
     const newPostRaw = this.buildUpdatedPost(tableIndex, raw, newRaw);
 
     return this.sendTableUpdate(postId, newPostRaw, editReason);
@@ -230,7 +225,7 @@ export default class SpreadsheetEditor extends Component {
     })
       .catch(popupAjaxError)
       .finally(() => {
-        this.args.triggerModalClose();
+        this.args.closeModal();
       });
   }
 
