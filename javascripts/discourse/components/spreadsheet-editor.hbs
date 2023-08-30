@@ -4,27 +4,6 @@
   class="insert-table-modal"
 >
   <:body>
-    {{#if this.isEditingTable}}
-      <div class="edit-reason">
-        <DButton
-          @icon="info-circle"
-          @title={{theme-prefix
-            "discourse_table_builder.edit.modal.trigger_reason"
-          }}
-          @action={{this.showEditReasonField}}
-          @class="btn btn-icon btn-flat no-text btn-edit-reason"
-        />
-        {{#if this.showEditReason}}
-          <TextField
-            @value={{this.editReason}}
-            @placeholderKey={{theme-prefix
-              "discourse_table_builder.edit.modal.reason"
-            }}
-          />
-        {{/if}}
-      </div>
-    {{/if}}
-
     <ConditionalLoadingSpinner @condition={{this.loading}}>
       <div
         {{did-insert this.createSpreadsheet}}
@@ -50,6 +29,26 @@
     </div>
 
     <div class="secondary-actions">
+      {{#if this.isEditingTable}}
+        <div class="edit-reason">
+          <DButton
+            @icon="info-circle"
+            @title={{theme-prefix
+              "discourse_table_builder.edit.modal.trigger_reason"
+            }}
+            @action={{this.showEditReasonField}}
+            @class="btn-edit-reason"
+          />
+          {{#if this.showEditReason}}
+            <TextField
+              @value={{this.editReason}}
+              @placeholderKey={{theme-prefix
+                "discourse_table_builder.edit.modal.reason"
+              }}
+            />
+          {{/if}}
+        </div>
+      {{/if}}
       <DPopover>
         <DButton class="trigger" @icon="question" />
         <ul>

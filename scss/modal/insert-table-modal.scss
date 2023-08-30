@@ -25,12 +25,11 @@
 
   .modal-inner-container {
     --modal-max-width: $reply-area-max-width;
-    width: $reply-area-max-width;
+    width: 100%;
+    height: 100%;
 
-    @media screen and (max-width: 1200px) {
-      --modal-max-width: 90%;
-      width: 100vw;
-    }
+    display: grid;
+    grid-template-rows: auto 1fr auto;
   }
 
   .modal-body {
@@ -38,17 +37,30 @@
     margin: 0.5em;
   }
 
-  .btn-edit-reason {
-    background: none;
-    .d-icon {
-      color: var(--primary-high);
-    }
-  }
-
   .modal-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    .secondary-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .edit-reason {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .btn {
+        margin-right: 0;
+      }
+
+      input {
+        margin: 0;
+      }
+    }
 
     .secondary-actions .tippy-content {
       h4 {
