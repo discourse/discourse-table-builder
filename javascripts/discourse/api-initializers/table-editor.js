@@ -1,5 +1,5 @@
 import { apiInitializer } from "discourse/lib/api";
-import showModal from "discourse/lib/show-modal";
+import SpreadsheetEditor from "../components/spreadsheet-editor";
 import { schedule } from "@ember/runloop";
 import I18n from "I18n";
 import { iconNode } from "discourse-common/lib/icon-library";
@@ -10,6 +10,8 @@ import { parseAsync } from "discourse/lib/text";
 import { tokenRange } from "../../discourse-table-builder/lib/utilities";
 
 export default apiInitializer("0.11.1", (api) => {
+  const modal = api.container.lookup("service:modal");
+
   function createButton() {
     const openPopupBtn = document.createElement("button");
     openPopupBtn.classList.add(
@@ -39,11 +41,12 @@ export default apiInitializer("0.11.1", (api) => {
           const allTables = tokenRange(tokens, "table_open", "table_close");
           const tableTokens = allTables[tableIndex];
 
-          showModal("insert-table-modal", {
-            model: post,
-          }).setProperties({
-            tableIndex,
-            tableTokens,
+          modal.show(SpreadsheetEditor, {
+            model: {
+              post,
+              tableIndex,
+              tableTokens,
+            },
           });
         })
       )

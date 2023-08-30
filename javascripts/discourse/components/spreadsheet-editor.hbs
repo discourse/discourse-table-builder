@@ -1,0 +1,74 @@
+<DModal
+  @title={{i18n this.modalAttributes.title}}
+  @closeModal={{@closeModal}}
+  class="insert-table-modal"
+>
+  <:body>
+    {{#if this.isEditingTable}}
+      <div class="edit-reason">
+        <DButton
+          @icon="info-circle"
+          @title={{theme-prefix
+            "discourse_table_builder.edit.modal.trigger_reason"
+          }}
+          @action={{this.showEditReasonField}}
+          @class="btn btn-icon btn-flat no-text btn-edit-reason"
+        />
+        {{#if this.showEditReason}}
+          <TextField
+            @value={{this.editReason}}
+            @placeholderKey={{theme-prefix
+              "discourse_table_builder.edit.modal.reason"
+            }}
+          />
+        {{/if}}
+      </div>
+    {{/if}}
+
+    <ConditionalLoadingSpinner @condition={{this.loading}}>
+      <div
+        {{did-insert this.createSpreadsheet}}
+        tabindex="1"
+        class="jexcel_container"
+      ></div>
+    </ConditionalLoadingSpinner>
+  </:body>
+
+  <:footer>
+    <div class="primary-actions">
+      <DButton
+        @class="btn-insert-table"
+        @label={{this.modalAttributes.insertTable.title}}
+        @icon={{this.modalAttributes.insertTable.icon}}
+        @action={{this.insertTable}}
+      />
+      <DButton
+        @class="btn-flat"
+        @label={{theme-prefix "discourse_table_builder.edit.modal.cancel"}}
+        @action={{@closeModal}}
+      />
+    </div>
+
+    <div class="secondary-actions">
+      <DPopover>
+        <DButton class="trigger" @icon="question" />
+        <ul>
+          <h4>{{theme-i18n "discourse_table_builder.modal.help.title"}}</h4>
+          <li>
+            <kbd>
+              {{theme-i18n "discourse_table_builder.modal.help.enter_key"}}
+            </kbd>
+            {{theme-i18n "discourse_table_builder.modal.help.new_row"}}
+          </li>
+          <li>
+            <kbd>
+              {{theme-i18n "discourse_table_builder.modal.help.tab_key"}}
+            </kbd>
+            {{theme-i18n "discourse_table_builder.modal.help.new_col"}}
+          </li>
+          <li>{{theme-i18n "discourse_table_builder.modal.help.options"}}</li>
+        </ul>
+      </DPopover>
+    </div>
+  </:footer>
+</DModal>
