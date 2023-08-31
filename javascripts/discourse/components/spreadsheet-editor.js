@@ -60,11 +60,7 @@ export default class SpreadsheetEditor extends Component {
 
   @action
   showEditReasonField() {
-    if (this.showEditReason) {
-      this.showEditReason = false;
-    } else {
-      this.showEditReason = true;
-    }
+    this.showEditReason = !this.showEditReason;
   }
 
   @action
