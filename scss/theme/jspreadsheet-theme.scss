@@ -254,3 +254,19 @@ table.jexcel > tbody > tr > td {
 .jcontextmenu > div:not(.contextmenu-line):last-child {
   display: none;
 }
+
+.jexcel_container {
+  padding: 0.5em;
+  min-width: 100%;
+  .jexcel_content {
+    min-width: 100%;
+    padding: 0;
+    table.jexcel {
+      min-width: 100%;
+    }
+  }
+}
+
+.jexcel_container {
+  padding: 0;
+}
