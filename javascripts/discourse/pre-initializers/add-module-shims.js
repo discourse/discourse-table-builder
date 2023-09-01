@@ -19,14 +19,6 @@ if (!require.entries[`${base}/discourse/components/spreadsheet-editor`]) {
       _exports.findTableRegex = utilities.findTableRegex;
     }
   );
-
-  define(
-    `discourse/discourse-table-builder/lib/locale-mapping`,
-    ["exports", `${base}/discourse-table-builder/lib/locale-mapping`],
-    function (_exports, localeMapping) {
-      _exports.localeMapping = localeMapping.localeMapping;
-    }
-  );
 }
 
 export default {
