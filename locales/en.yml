@@ -30,7 +30,6 @@ en:
       col_4: "Column 4"
     spreadsheet:
       no_records_found: "No records found"
-      showing_page: "Showing page {0} of {1} entries"
       show: "Show"
       entries: "entries"
       about: "About"

@@ -8,7 +8,6 @@ function prefixedLocale(localeString) {
 
 export const localeMapping = {
   noRecordsFound: prefixedLocale("no_records_found"),
-  showingPage: prefixedLocale("showing_page"),
   show: prefixedLocale("show"),
   entries: prefixedLocale("entries"),
   insertANewColumnBefore: prefixedLocale("context_menu.col.before"),
