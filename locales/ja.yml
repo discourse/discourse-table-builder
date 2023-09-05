@@ -36,7 +36,6 @@ ja:
       col_4: "列 4"
     spreadsheet:
       no_records_found: "レコードが見つかりません"
-      showing_page: "{1} エントリーの {0} ページ目を表示中"
       show: "表示"
       entries: "エントリー"
       about: "情報"

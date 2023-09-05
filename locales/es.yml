@@ -36,7 +36,6 @@ es:
       col_4: "Columna 4"
     spreadsheet:
       no_records_found: "No se han encontrado registros"
-      showing_page: "Mostrando página {0} de {1} entradas"
       show: "Mostrar"
       entries: "entradas"
       about: "Acerca de"

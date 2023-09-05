@@ -17,8 +17,8 @@ zh_CN:
         title: "使用电子表格编辑器"
         enter_key: "Enter"
         tab_key: "Tab"
-        new_row: "插入行"
-        new_col: "插入列"
+        new_row: "在行末尾插入新行。"
+        new_col: "在列末尾插入新列。"
         options: "右键点击单元格可访问下拉菜单中的更多选项。"
     edit:
       btn_edit: "编辑表"
@@ -36,7 +36,6 @@ zh_CN:
       col_4: "第 4 列"
     spreadsheet:
       no_records_found: "找不到记录"
-      showing_page: "显示第 {0} 页，共 {1} 个条目"
       show: "显示"
       entries: "个条目"
       about: "关于"

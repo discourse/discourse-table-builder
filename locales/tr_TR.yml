@@ -36,7 +36,6 @@ tr_TR:
       col_4: "Sütun 4"
     spreadsheet:
       no_records_found: "Kayıt bulunamadı"
-      showing_page: "{1} girdiden {0}. sayfa gösteriliyor"
       show: "Göster"
       entries: "girdiler"
       about: "Hakkında"

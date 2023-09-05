@@ -36,7 +36,6 @@ ar:
       col_4: "العمود 4"
     spreadsheet:
       no_records_found: "لم يتم العثور على سجلات"
-      showing_page: "يتم عرض إدخالات الصفحة {0} من {1}"
       show: "إظهار"
       entries: "إدخالات"
       about: "نبذة"

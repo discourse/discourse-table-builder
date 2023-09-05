@@ -36,7 +36,6 @@ it:
       col_4: "Colonna 4"
     spreadsheet:
       no_records_found: "Nessun record trovato"
-      showing_page: "Stai vedendo la pagina {0} di {1}"
       show: "Mostra"
       entries: "voci"
       about: "Informazioni"
