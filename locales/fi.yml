@@ -36,7 +36,6 @@ fi:
       col_4: "Sarake 4"
     spreadsheet:
       no_records_found: "Tietueita ei löydy"
-      showing_page: "Näytetään {1} merkinnän sivu {0}"
       show: "Näytä"
       entries: "merkintää"
       about: "Tietoja"

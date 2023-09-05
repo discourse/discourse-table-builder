@@ -36,7 +36,6 @@ he:
       col_4: "עמודה 4"
     spreadsheet:
       no_records_found: "לא נמצאו רשומות"
-      showing_page: "מוצג דף {0} מתוך {1} רשומות"
       show: "הצגה"
       entries: "רשומות"
       about: "על אודות"

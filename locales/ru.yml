@@ -36,7 +36,6 @@ ru:
       col_4: "Столбец 4"
     spreadsheet:
       no_records_found: "Записей не найдено"
-      showing_page: "Показана страница {0} (всего записей: {1})"
       show: "Показать"
       entries: "записи"
       about: "Информация"

@@ -36,7 +36,6 @@ de:
       col_4: "Spalte 4"
     spreadsheet:
       no_records_found: "Keine Datensätze gefunden"
-      showing_page: "Seite {0} von {1} Einträgen wird angezeigt"
       show: "Anzeigen"
       entries: "Einträge"
       about: "Über"

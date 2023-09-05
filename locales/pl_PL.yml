@@ -36,7 +36,6 @@ pl_PL:
       col_4: "Kolumna 4"
     spreadsheet:
       no_records_found: "Nie znaleziono rekordów"
-      showing_page: "Wyświetlanie strony {0} z {1} elementów"
       show: "Pokaż"
       entries: "elementy"
       about: "O stronie"

@@ -36,7 +36,6 @@ nl:
       col_4: "Kolom 4"
     spreadsheet:
       no_records_found: "Geen records gevonden"
-      showing_page: "Pagina {0} van {1} wordt weergegeven"
       show: "Weergeven"
       entries: "vermeldingen"
       about: "Over"

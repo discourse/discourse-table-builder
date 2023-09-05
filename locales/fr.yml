@@ -36,7 +36,6 @@ fr:
       col_4: "Colonne 4"
     spreadsheet:
       no_records_found: "Aucun enregistrement trouvé"
-      showing_page: "Affichage de la page {0} sur {1} entrées"
       show: "Afficher"
       entries: "entrées"
       about: "À propos"
