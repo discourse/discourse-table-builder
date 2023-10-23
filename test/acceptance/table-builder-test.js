@@ -1,3 +1,4 @@
+import I18n from "discourse-i18n";
 import { acceptance, exists } from "discourse/tests/helpers/qunit-helpers";
 import { click, visit } from "@ember/test-helpers";
 import { test } from "qunit";
@@ -13,10 +14,14 @@ acceptance("Table Builder", function (needs) {
     await click("#create-topic");
     await click(".d-editor-button-bar .options");
     await selectKit(".toolbar-popup-menu-options").expand();
-    assert.ok(
-      exists(".select-kit-row[data-value='showTableBuilder']"),
-      "it shows the builder button"
-    );
+
+    assert
+      .dom(
+        `.select-kit-row[data-name='${I18n.t(
+          themePrefix("discourse_table_builder.composer.button")
+        )}']`
+      )
+      .exists("it shows the builder button");
   });
 
   test("Can see table builder button when editing post", async function (assert) {
@@ -26,9 +31,13 @@ acceptance("Table Builder", function (needs) {
     assert.ok(exists("#reply-control"));
     await click(".d-editor-button-bar .options");
     await selectKit(".toolbar-popup-menu-options").expand();
-    assert.ok(
-      exists(".select-kit-row[data-value='showTableBuilder']"),
-      "it shows the builder button"
-    );
+
+    assert
+      .dom(
+        `.select-kit-row[data-name='${I18n.t(
+          themePrefix("discourse_table_builder.composer.button")
+        )}']`
+      )
+      .exists("it shows the builder button");
   });
 });
