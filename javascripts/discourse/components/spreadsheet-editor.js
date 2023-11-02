@@ -12,10 +12,12 @@ import { popupAjaxError } from "discourse/lib/ajax-error";
 import I18n from "I18n";
 import { schedule } from "@ember/runloop";
 import { tracked } from "@glimmer/tracking";
-
+import { inject as service } from "@ember/service";
 export default class SpreadsheetEditor extends Component {
+  @service dialog;
   @tracked showEditReason = false;
   @tracked loading = null;
+
   spreadsheet = null;
   defaultColWidth = 150;
   isEditingTable = !!this.args.model.tableTokens;
@@ -63,6 +65,22 @@ export default class SpreadsheetEditor extends Component {
   }
 
   @action
+  interceptCloseModal() {
+    if (this._hasChanges()) {
+      this.dialog.yesNoConfirm({
+        message: I18n.t(
+          themePrefix("discourse_table_builder.modal.confirm_close")
+        ),
+        didConfirm: () => {
+          this.args.closeModal();
+        },
+      });
+    } else {
+      this.args.closeModal();
+    }
+  }
+
+  @action
   insertTable() {
     const updatedHeaders = this.spreadsheet.getHeaders().split(","); // keys
     const updatedData = this.spreadsheet.getData(); // values
@@ -73,6 +91,27 @@ export default class SpreadsheetEditor extends Component {
       return this.args.closeModal();
     } else {
       return this.updateTable(markdownTable);
+    }
+  }
+
+  _hasChanges() {
+    if (this.isEditingTable) {
+      const originalSpreadsheetData = this.extractTableContent(
+        tokenRange(this.args.model.tableTokens, "tr_open", "tr_close")
+      );
+      const currentHeaders = this.spreadsheet.getHeaders().split(",");
+      const currentRows = this.spreadsheet.getData();
+      const currentSpreadsheetData = currentHeaders.concat(currentRows.flat());
+
+      return (
+        JSON.stringify(currentSpreadsheetData) !==
+        JSON.stringify(originalSpreadsheetData)
+      );
+    } else {
+      return this.spreadsheet
+        .getData()
+        .flat()
+        .some((element) => element !== "");
     }
   }
 

@@ -1,6 +1,6 @@
 <DModal
   @title={{i18n this.modalAttributes.title}}
-  @closeModal={{@closeModal}}
+  @closeModal={{this.interceptCloseModal}}
   class="insert-table-modal"
 >
   <:body>
@@ -24,7 +24,7 @@
       <DButton
         @class="btn-flat"
         @label={{theme-prefix "discourse_table_builder.edit.modal.cancel"}}
-        @action={{@closeModal}}
+        @action={{this.interceptCloseModal}}
       />
     </div>
 
