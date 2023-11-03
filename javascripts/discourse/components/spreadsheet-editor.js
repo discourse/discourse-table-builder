@@ -71,9 +71,7 @@ export default class SpreadsheetEditor extends Component {
         message: I18n.t(
           themePrefix("discourse_table_builder.modal.confirm_close")
         ),
-        didConfirm: () => {
-          this.args.closeModal();
-        },
+        didConfirm: () => this.args.closeModal(),
       });
     } else {
       this.args.closeModal();
