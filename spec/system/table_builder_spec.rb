@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "../page_objects/modals/insert_table"
+require_relative "page_objects/modals/insert_table"
 
 RSpec.describe "Table Builder", system: true do
   fab!(:user) { Fabricate(:user) }
