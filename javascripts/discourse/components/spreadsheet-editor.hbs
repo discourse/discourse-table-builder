@@ -21,11 +21,8 @@
         @icon={{this.modalAttributes.insertTable.icon}}
         @action={{this.insertTable}}
       />
-      <DButton
-        @class="btn-flat"
-        @label={{theme-prefix "discourse_table_builder.edit.modal.cancel"}}
-        @action={{this.interceptCloseModal}}
-      />
+
+      <DModalCancel @close={{this.interceptCloseModal}} />
     </div>
 
     <div class="secondary-actions">

@@ -6,7 +6,6 @@ en:
     modal:
       title: "Table Builder"
       create: "Build Table"
-      cancel: "cancel"
       help:
         title: "Using the Spreadsheet Editor"
         enter_key: "Enter"
