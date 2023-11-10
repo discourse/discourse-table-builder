@@ -46,8 +46,12 @@
           {{/if}}
         </div>
       {{/if}}
-      <DPopover>
-        <DButton class="trigger" @icon="question" />
+      <DTooltip
+        @icon="question"
+        @triggers="click"
+        @arrow={{false}}
+        class="btn btn-icon no-text"
+      >
         <ul>
           <h4>{{theme-i18n "discourse_table_builder.modal.help.title"}}</h4>
           <li>
@@ -64,7 +68,7 @@
           </li>
           <li>{{theme-i18n "discourse_table_builder.modal.help.options"}}</li>
         </ul>
-      </DPopover>
+      </DTooltip>
     </div>
   </:footer>
 </DModal>
