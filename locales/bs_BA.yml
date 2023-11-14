@@ -7,7 +7,6 @@
 bs_BA:
   discourse_table_builder:
     modal:
-      cancel: "otkaži"
       help:
         enter_key: "Naprijed"
     edit:

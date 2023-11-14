@@ -7,7 +7,6 @@
 hy:
   discourse_table_builder:
     modal:
-      cancel: "չեղարկել"
       help:
         enter_key: "Մուտք"
     edit:

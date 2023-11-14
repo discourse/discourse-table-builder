@@ -7,7 +7,6 @@
 lv:
   discourse_table_builder:
     modal:
-      cancel: "atcelt"
       help:
         enter_key: "Ievadīt"
     edit:

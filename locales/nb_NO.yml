@@ -7,7 +7,6 @@
 nb_NO:
   discourse_table_builder:
     modal:
-      cancel: "avbryt"
       help:
         enter_key: "Angi"
     edit:

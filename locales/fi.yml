@@ -12,7 +12,6 @@ fi:
     modal:
       title: "Taulukkotyökalu"
       create: "Luo taulukko"
-      cancel: "peruuta"
       help:
         title: "Laskentataulukkoeditorin käyttäminen"
         enter_key: "Enter"

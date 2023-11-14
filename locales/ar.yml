@@ -12,7 +12,6 @@ ar:
     modal:
       title: "أداة إنشاء الجداول"
       create: "إنشاء جدول"
-      cancel: "إلغاء"
       help:
         title: "استخدام محرر جداول البيانات"
         enter_key: "Enter"

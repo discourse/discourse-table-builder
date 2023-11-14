@@ -6,8 +6,6 @@
 
 ro:
   discourse_table_builder:
-    modal:
-      cancel: "Anulează"
     edit:
       modal:
         cancel: "Anulează"

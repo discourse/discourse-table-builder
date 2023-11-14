@@ -12,7 +12,6 @@ ja:
     modal:
       title: "テーブル作成ツール"
       create: "テーブルを作成"
-      cancel: "キャンセル"
       help:
         title: "表計算シート作成ツールの使用"
         enter_key: "Enter"

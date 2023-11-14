@@ -7,7 +7,6 @@
 sl:
   discourse_table_builder:
     modal:
-      cancel: "prekliči"
       help:
         enter_key: "Enter"
     edit:

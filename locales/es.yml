@@ -12,7 +12,6 @@ es:
     modal:
       title: "Creador de tablas"
       create: "Crear tabla"
-      cancel: "cancelar"
       help:
         title: "Usando el editor de hojas de cálculo"
         enter_key: "Intro"

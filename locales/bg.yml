@@ -7,7 +7,6 @@
 bg:
   discourse_table_builder:
     modal:
-      cancel: "прекрати"
       help:
         enter_key: "Въведете"
     edit:

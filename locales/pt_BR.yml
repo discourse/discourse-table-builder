@@ -12,7 +12,6 @@ pt_BR:
     modal:
       title: "Compilador de tabela"
       create: "Compilar tabela"
-      cancel: "cancelar"
       help:
         title: "Usando editor de planilha"
         enter_key: "Enter"

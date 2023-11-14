@@ -6,8 +6,6 @@
 
 et:
   discourse_table_builder:
-    modal:
-      cancel: "tühista"
     edit:
       modal:
         cancel: "tühista"

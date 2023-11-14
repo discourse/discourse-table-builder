@@ -6,8 +6,6 @@
 
 zh_TW:
   discourse_table_builder:
-    modal:
-      cancel: "取消"
     edit:
       modal:
         cancel: "取消"

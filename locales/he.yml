@@ -12,7 +12,6 @@ he:
     modal:
       title: "בונה טבלאות"
       create: "בניית טבלה"
-      cancel: "ביטול"
       help:
         title: "באמצעות עורך גיליונות הנתונים"
         enter_key: "Enter"

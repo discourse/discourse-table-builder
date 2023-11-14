@@ -7,7 +7,6 @@
 gl:
   discourse_table_builder:
     modal:
-      cancel: "cancelar"
       help:
         enter_key: "Intro"
     edit:

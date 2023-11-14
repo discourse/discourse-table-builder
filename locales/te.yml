@@ -6,8 +6,6 @@
 
 te:
   discourse_table_builder:
-    modal:
-      cancel: "రద్దు"
     edit:
       modal:
         cancel: "రద్దు"

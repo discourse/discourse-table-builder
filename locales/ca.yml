@@ -7,7 +7,6 @@
 ca:
   discourse_table_builder:
     modal:
-      cancel: "cancel·la"
       help:
         enter_key: "Retorn"
     edit:

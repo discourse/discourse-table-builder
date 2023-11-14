@@ -6,8 +6,6 @@
 
 sw:
   discourse_table_builder:
-    modal:
-      cancel: "ghairi"
     edit:
       modal:
         cancel: "ghairi"

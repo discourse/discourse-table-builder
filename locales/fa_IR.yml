@@ -7,7 +7,6 @@
 fa_IR:
   discourse_table_builder:
     modal:
-      cancel: "لغو"
       help:
         enter_key: "وارد شدن "
     edit:

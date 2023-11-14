@@ -7,7 +7,6 @@
 ur:
   discourse_table_builder:
     modal:
-      cancel: "منسوخ"
       help:
         enter_key: "اَینٹر"
     edit:

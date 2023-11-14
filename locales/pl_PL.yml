@@ -12,7 +12,6 @@ pl_PL:
     modal:
       title: "Konstruktor tabeli"
       create: "Zbuduj tabelę"
-      cancel: "anuluj"
       help:
         title: "Za pomocą edytora arkusza kalkulacyjnego"
         enter_key: "Enter"

@@ -7,7 +7,6 @@
 uk:
   discourse_table_builder:
     modal:
-      cancel: "скасувати"
       help:
         enter_key: "Enter"
     edit:

@@ -7,7 +7,6 @@
 da:
   discourse_table_builder:
     modal:
-      cancel: "annuller"
       help:
         enter_key: "Enter"
     edit:

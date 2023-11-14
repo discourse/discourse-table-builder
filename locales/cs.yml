@@ -6,8 +6,6 @@
 
 cs:
   discourse_table_builder:
-    modal:
-      cancel: "zrušit"
     edit:
       modal:
         cancel: "zrušit"
