@@ -12,7 +12,6 @@ zh_CN:
     modal:
       title: "表生成器"
       create: "创建表"
-      cancel: "取消"
       help:
         title: "使用电子表格编辑器"
         enter_key: "Enter"

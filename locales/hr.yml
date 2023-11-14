@@ -7,7 +7,6 @@
 hr:
   discourse_table_builder:
     modal:
-      cancel: "otkaži"
       help:
         enter_key: "Unesi"
     edit:

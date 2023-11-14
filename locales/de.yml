@@ -12,7 +12,6 @@ de:
     modal:
       title: "Tabellenersteller"
       create: "Tabelle erstellen"
-      cancel: "Abbrechen"
       help:
         title: "Verwendung des Tabellenkalkulationseditors"
         enter_key: "Enter"

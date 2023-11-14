@@ -6,8 +6,6 @@
 
 be:
   discourse_table_builder:
-    modal:
-      cancel: "адмена"
     edit:
       modal:
         cancel: "адмена"

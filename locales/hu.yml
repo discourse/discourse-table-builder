@@ -7,7 +7,6 @@
 hu:
   discourse_table_builder:
     modal:
-      cancel: "mégse"
       help:
         enter_key: "Enter"
     edit:

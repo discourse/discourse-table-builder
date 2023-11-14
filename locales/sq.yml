@@ -6,8 +6,6 @@
 
 sq:
   discourse_table_builder:
-    modal:
-      cancel: "anulo"
     edit:
       modal:
         cancel: "anulo"

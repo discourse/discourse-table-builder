@@ -12,7 +12,6 @@ nl:
     modal:
       title: "Tabelbouwer"
       create: "Tabel bouwen"
-      cancel: "annuleren"
       help:
         title: "Gebruik van de spreadsheeteditor"
         enter_key: "Enter"

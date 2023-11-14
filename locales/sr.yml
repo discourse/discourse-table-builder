@@ -6,8 +6,6 @@
 
 sr:
   discourse_table_builder:
-    modal:
-      cancel: "otkaži"
     edit:
       modal:
         cancel: "otkaži"

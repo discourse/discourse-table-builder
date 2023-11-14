@@ -7,7 +7,6 @@
 el:
   discourse_table_builder:
     modal:
-      cancel: "ακύρωση"
       help:
         enter_key: "Enter"
     edit:

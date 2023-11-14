@@ -7,7 +7,6 @@
 lt:
   discourse_table_builder:
     modal:
-      cancel: "atšaukti"
       help:
         enter_key: "Įeiti"
     edit:

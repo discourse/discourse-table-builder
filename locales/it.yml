@@ -12,7 +12,6 @@ it:
     modal:
       title: "Costruttore di tabelle"
       create: "Costruisci tabella"
-      cancel: "annulla"
       help:
         title: "Utilizzo dell'editor di fogli di calcolo"
         enter_key: "Invio"
