@@ -7,16 +7,5 @@
   "learn_more": "TODO",
   "theme_version": "0.0.1",
   "minimum_discourse_version": "2.9.0.beta9",
-  "maximum_discourse_version": null,
-  "assets": {
-    "jsuites": "assets/vendor/jsuites.js",
-    "jspreadsheet": "assets/vendor/jspreadsheet.js"
-  },
-  "modifiers": {
-    "svg_icons": [
-      "align-left",
-      "align-center",
-      "align-right"
-    ]
-  }
+  "maximum_discourse_version": "v3.2.0.beta4-dev"
 }
