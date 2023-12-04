@@ -5,7 +5,5 @@
   "license_url": "https://github.com/discourse/discourse-table-builder/blob/main/LICENSE.txt",
   "about_url": "TODO",
   "learn_more": "TODO",
-  "theme_version": "0.0.1",
-  "minimum_discourse_version": "2.9.0.beta9",
-  "maximum_discourse_version": "3.2.0.beta4-dev"
+  "theme_version": "0.0.1"
 }
